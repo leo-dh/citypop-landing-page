@@ -19,6 +19,10 @@
         >
       </v-card>
     </div>
+    <div id="one-text" class="albumgrid__textsmall">
+      City pop (シティーポップ, shitī poppu) is a loosely defined subset of pop music that
+      originated in Japan in the late 1970s.
+    </div>
     <div id="two" class="albumgrid__albumsmall">
       <v-card>
         <v-img width="50vw" src="@/assets/MariyaTakeuchiPlasticLoveVinylCover.jpg"></v-img>
@@ -64,9 +68,8 @@ export default class HelloWorld extends Vue {
   grid-template-areas:
     "a a a a"
     "a a a a"
-    ". . . ."
-    ". . b b"
-    ". . b b"
+    "d d b b"
+    "d d b b"
     "c c . ."
     "c c . .";
 }
@@ -89,6 +92,7 @@ export default class HelloWorld extends Vue {
   justify-content: center;
   align-items: center;
   font-weight: bolder;
+  padding-bottom: 1em;
 }
 .albumgrid__title--sm {
   font-size: 3em;
@@ -97,5 +101,14 @@ export default class HelloWorld extends Vue {
 .albumgrid__title--md {
   writing-mode: vertical-rl;
   font-size: 10rem;
+}
+.albumgrid__textsmall {
+  display: flex;
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+}
+#one-text {
+  grid-area: d;
 }
 </style>
