@@ -1,7 +1,7 @@
 <template>
   <v-app-bar app dark>
     <v-app-bar-nav-icon
-      class="d-lg-none"
+      class="d-md-none"
       @click="$store.state.drawer = !$store.state.drawer"
     ></v-app-bar-nav-icon>
     <div class="d-flex align-center">
@@ -15,10 +15,12 @@
       />
     </div>
     <v-spacer></v-spacer>
-    <v-btn v-for="route in $store.state.routes" :key="route.path" :to="route.path" class="mr-1">
-      <v-icon left>{{ route.icon }}</v-icon>
-      <span>{{ route.title }}</span>
-    </v-btn>
+    <div v-if="$vuetify.breakpoint.mdAndUp">
+      <v-btn v-for="route in $store.state.routes" :key="route.path" :to="route.path" class="mr-1">
+        <v-icon left>{{ route.icon }}</v-icon>
+        <span>{{ route.title }}</span>
+      </v-btn>
+    </div>
   </v-app-bar>
 </template>
 

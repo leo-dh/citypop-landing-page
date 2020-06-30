@@ -15,3 +15,4 @@ import HelloWorld from "@/components/HelloWorld.vue";
 })
 export default class Home extends Vue {}
 </script>
+<style scoped></style>

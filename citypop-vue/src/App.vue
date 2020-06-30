@@ -3,9 +3,7 @@
     <AppNavBar />
     <AppNavDrawer />
     <v-main>
-      <v-container fluid>
-        <router-view></router-view>
-      </v-container>
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>

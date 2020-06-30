@@ -8,31 +8,33 @@
         $vuetify.breakpoint.mdAndUp ? 'albumgrid__title--md' : 'albumgrid__title--sm'
       ]"
     >
-      CityPop
+      Discover <br v-if="!$vuetify.breakpoint.mdAndUp" />CityPop
     </div>
-    <div id="one" class="albumgrid__albumsmall">One</div>
-    <div id="two" class="albumgrid__albumsmall">Two</div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div id="one" class="albumgrid__albumsmall">
+      <v-card>
+        <v-img width="50vw" src="@/assets/PlasticLoveArtworkByUsagiHime.jpg"> </v-img>
+        <v-card-text
+          >Plastic Love Artwork by <br />
+          兔姬 UsagiHime</v-card-text
+        >
+      </v-card>
+    </div>
+    <div id="two" class="albumgrid__albumsmall">
+      <v-card>
+        <v-img width="50vw" src="@/assets/MariyaTakeuchiPlasticLoveVinylCover.jpg"></v-img>
+        <v-card-text>
+          Original Plastic Love Vinyl Cover
+        </v-card-text>
+      </v-card>
+    </div>
   </v-container>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
+import { Vue, Component } from "vue-property-decorator";
 
 @Component
 export default class HelloWorld extends Vue {
-  name = "HelloWorld";
-
   data() {
     return {};
   }
@@ -42,9 +44,10 @@ export default class HelloWorld extends Vue {
 <style scoped>
 .albumgrid {
   display: grid;
-  gap: 1em;
+  padding: 0;
 }
 .albumgrid--md {
+  gap: 1em;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: 1fr;
   grid-template-areas:
@@ -57,8 +60,17 @@ export default class HelloWorld extends Vue {
     "a a a . . . . . . . . .";
 }
 .albumgrid--sm {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "a a a a"
+    "a a a a"
+    ". . . ."
+    ". . b b"
+    ". . b b"
+    "c c . ."
+    "c c . .";
 }
-.albumgrid::before {
+.albumgrid--md::before {
   content: "";
   width: 0;
   padding-bottom: 100%;
@@ -76,8 +88,11 @@ export default class HelloWorld extends Vue {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bolder;
 }
 .albumgrid__title--sm {
+  font-size: 3em;
+  font-weight: 800;
 }
 .albumgrid__title--md {
   writing-mode: vertical-rl;
