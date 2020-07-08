@@ -1,13 +1,6 @@
 <template>
-  <v-container
-    :class="['albumgrid', $vuetify.breakpoint.mdAndUp ? 'albumgrid--md' : 'albumgrid--sm']"
-  >
-    <div
-      :class="[
-        'albumgrid__title',
-        $vuetify.breakpoint.mdAndUp ? 'albumgrid__title--md' : 'albumgrid__title--sm'
-      ]"
-    >
+  <v-container :class="['albumgrid']">
+    <div :class="['albumgrid__title']">
       Discover <br v-if="!$vuetify.breakpoint.mdAndUp" />CityPop
     </div>
     <div id="one" class="albumgrid__albumsmall">
@@ -35,50 +28,55 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import Vue from "vue";
 
-@Component
-export default class HelloWorld extends Vue {
+export default Vue.extend({
+  name: "HelloWorld",
   data() {
     return {};
   }
-}
+});
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .albumgrid {
   display: grid;
   padding: 0;
 }
-.albumgrid--md {
-  gap: 1em;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 1fr;
-  grid-template-areas:
-    "a a a b b b . . . . . ."
-    "a a a b b b . . . . . ."
-    "a a a b b b . . . . . ."
-    "a a a c c c . . . . . ."
-    "a a a c c c . . . . . ."
-    "a a a . . . . . . . . ."
-    "a a a . . . . . . . . .";
+
+@media #{map-get($display-breakpoints, 'md-only')} {
+  .albumgrid {
+    gap: 1em;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 1fr;
+    grid-template-areas:
+      "a a a b b b . . . . . ."
+      "a a a b b b . . . . . ."
+      "a a a b b b . . . . . ."
+      "a a a c c c . . . . . ."
+      "a a a c c c . . . . . ."
+      "a a a . . . . . . . . ."
+      "a a a . . . . . . . . .";
+  }
+  .albumgrid::before {
+    content: "";
+    width: 0;
+    padding-bottom: 100%;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
 }
-.albumgrid--sm {
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas:
-    "a a a a"
-    "a a a a"
-    "d d b b"
-    "d d b b"
-    "c c . ."
-    "c c . .";
-}
-.albumgrid--md::before {
-  content: "";
-  width: 0;
-  padding-bottom: 100%;
-  grid-row: 1 / 1;
-  grid-column: 1 / 1;
+@media #{map-get($display-breakpoints, 'sm-and-down')} {
+  .albumgrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "a a a a"
+      "a a a a"
+      "d d b b"
+      "d d b b"
+      "c c . ."
+      "c c . .";
+  }
 }
 #one {
   grid-area: b;

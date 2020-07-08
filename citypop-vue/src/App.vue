@@ -1,7 +1,7 @@
 <template>
   <v-app>
-    <AppNavBar />
-    <AppNavDrawer />
+    <app-nav-bar />
+    <app-nav-drawer />
     <v-main>
       <router-view></router-view>
     </v-main>
@@ -9,26 +9,27 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Watch } from "vue-property-decorator";
+import Vue from "vue";
 import AppNavBar from "@/components/AppNavBar.vue";
 import AppNavDrawer from "@/components/AppNavDrawer.vue";
 
-@Component({
+export default Vue.extend({
+  name: "App",
   components: {
     AppNavBar,
     AppNavDrawer
-  }
-})
-export default class App extends Vue {
+  },
   data() {
     return {};
-  }
-
-  @Watch("$vuetify.breakpoint.mobile")
-  onPropertyChanged(newValue: boolean, oldValue: boolean) {
-    if (!newValue) {
-      this.$store.state.drawer = false;
+  },
+  watch: {
+    "$vuetify.breakpoint.mobile": {
+      handler: function(newValue: boolean, oldValue: boolean): void {
+        if (!newValue) {
+          this.$store.state.drawer = false;
+        }
+      }
     }
   }
-}
+});
 </script>

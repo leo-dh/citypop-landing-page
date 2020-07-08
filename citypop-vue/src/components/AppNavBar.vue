@@ -25,12 +25,12 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import Vue from "vue";
 
-@Component
-export default class AppNavBar extends Vue {
+export default Vue.extend({
+  name: "AppNavbar",
   data() {
     return {};
   }
-}
+});
 </script>
