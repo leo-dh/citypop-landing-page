@@ -18,7 +18,9 @@
     <div v-if="$vuetify.breakpoint.mdAndUp">
       <v-btn v-for="route in $store.state.routes" :key="route.path" :to="route.path" class="mr-1">
         <v-icon left>{{ route.icon }}</v-icon>
-        <span>{{ route.title }}</span>
+        <span class="font-weight-bold text-capitalize letter-spacing-normal">{{
+          route.title
+        }}</span>
       </v-btn>
     </div>
   </v-app-bar>

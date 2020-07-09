@@ -1,8 +1,6 @@
 <template>
-  <v-container :class="['albumgrid']">
-    <div :class="['albumgrid__title']">
-      Discover <br v-if="!$vuetify.breakpoint.mdAndUp" />CityPop
-    </div>
+  <v-container class="albumgrid">
+    <div class="albumgrid__title">Discover <br v-if="!$vuetify.breakpoint.mdAndUp" />CityPop</div>
     <div id="one" class="albumgrid__albumsmall">
       <v-card>
         <v-img width="50vw" src="@/assets/PlasticLoveArtworkByUsagiHime.jpg"> </v-img>

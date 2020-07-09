@@ -19,9 +19,6 @@ export default Vue.extend({
     AppNavBar,
     AppNavDrawer
   },
-  data() {
-    return {};
-  },
   watch: {
     "$vuetify.breakpoint.mobile": {
       handler: function(newValue: boolean, oldValue: boolean): void {
@@ -33,3 +30,7 @@ export default Vue.extend({
   }
 });
 </script>
+
+<style lang="scss">
+@import "@/scss/globalstyles.scss";
+</style>
