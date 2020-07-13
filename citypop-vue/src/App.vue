@@ -2,7 +2,7 @@
   <v-app>
     <app-nav-bar />
     <app-nav-drawer />
-    <v-main>
+    <v-main class="main">
       <router-view></router-view>
     </v-main>
   </v-app>
@@ -33,4 +33,7 @@ export default Vue.extend({
 
 <style lang="scss">
 @import "@/scss/globalstyles.scss";
+.main {
+  background-color: $background-dark;
+}
 </style>

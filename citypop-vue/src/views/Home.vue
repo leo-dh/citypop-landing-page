@@ -1,6 +1,7 @@
 <template>
   <div>
     <hero />
+    <div class="placeholder"></div>
   </div>
 </template>
 
@@ -15,3 +16,9 @@ export default Vue.extend({
   }
 });
 </script>
+
+<style lang="scss" scoped>
+.placeholder {
+  height: 100vh;
+}
+</style>
