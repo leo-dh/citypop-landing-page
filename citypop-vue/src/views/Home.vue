@@ -1,18 +1,20 @@
 <template>
   <div>
     <hero />
-    <div class="placeholder"></div>
+    <information />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Hero from "@/components/Hero.vue";
+import Information from "@/components/Information.vue";
 
 export default Vue.extend({
   name: "Home",
   components: {
-    Hero
+    Hero,
+    Information
   }
 });
 </script>

@@ -6,18 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     drawer: false,
-    routes: [
-      {
-        path: "/",
-        title: "Home",
-        icon: "mdi-home"
-      },
-      {
-        path: "/about",
-        title: "About",
-        icon: "mdi-information"
-      }
-    ]
+    videoPlaying: false
   },
   getters: {
     drawer: state => {

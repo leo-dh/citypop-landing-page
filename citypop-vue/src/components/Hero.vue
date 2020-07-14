@@ -1,15 +1,19 @@
 <template>
-  <div class="hero">
-    <div class="hero__content">
-      <h1 class="hero__content__title ">Discover Citypop</h1>
-      <v-btn class="hero__content__button" rounded>Lets go!</v-btn>
+  <div class="grid-layout">
+    <div class="hero ">
+      <div class="hero__content">
+        <h1 class="hero__content__title ">Discover Citypop</h1>
+        <v-btn class="primary-btn text-cursive text-decoration-none hero__content__button" rounded
+          >Lets go!</v-btn
+        >
+      </div>
+      <img
+        src="@/assets/skyline-2730410.svg"
+        alt="watermark of cityskyline"
+        srcset=""
+        class="hero__watermark"
+      />
     </div>
-    <img
-      src="@/assets/skyline-2730410.svg"
-      alt="watermark of cityskyline"
-      srcset=""
-      class="hero__watermark"
-    />
   </div>
 </template>
 
@@ -31,6 +35,7 @@ export default Vue.extend({
   align-items: center;
   justify-content: center;
   position: relative;
+  grid-column: 1 / 5;
 
   &__content {
     display: flex;
@@ -51,10 +56,8 @@ export default Vue.extend({
     }
 
     &__button {
-      background-color: $color-red !important;
-      font-family: "Damion", cursive;
-      text-transform: none;
       font-size: 1rem;
+      z-index: 2;
     }
   }
 
@@ -64,6 +67,7 @@ export default Vue.extend({
     opacity: 0.1;
     min-width: 100vw;
     min-height: 40vh;
+    z-index: 1;
   }
 }
 </style>

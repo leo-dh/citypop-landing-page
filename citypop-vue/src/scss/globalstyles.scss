@@ -7,12 +7,49 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat", sans-serif;
+  color: $color-orange;
 }
 
-.letter-spacing-normal {
+.text-spacing-normal {
   letter-spacing: normal;
 }
 
 .hidden {
   display: none;
+}
+
+.primary-btn {
+  background-color: $color-red !important;
+}
+
+.text-cursive {
+  font-family: "Damion", cursive;
+}
+
+.text-sans-serif {
+  font-family: "Montserrat", sans-serif;
+}
+
+.grid-layout {
+  display: grid;
+}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+@media #{map-get($display-breakpoints, 'xs-only')} {
+  .grid-layout {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 16px;
+    padding: 0 16px;
+  }
+  .sm-col4 {
+    grid-column: 1 / 5;
+  }
+
+  p {
+    font-size: 13px;
+  }
 }

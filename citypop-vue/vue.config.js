@@ -6,5 +6,13 @@ module.exports = {
         prependData: `@import "~@/scss/variables.scss";`
       }
     }
+  },
+  configureWebpack: {
+    devServer: {
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      }
+      // https: true
+    }
   }
 };
