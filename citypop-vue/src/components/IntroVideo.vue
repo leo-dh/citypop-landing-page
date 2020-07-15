@@ -1,9 +1,10 @@
 <template>
-  <div class="iframe-container">
+  <div ref="iframeContainer" class="iframe-container">
     <youtube
       ref="youtube"
       :video-id="videoId"
-      :fit-parent="true"
+      :height="iframeHeight"
+      :width="iframeWidth"
       @playing="playing"
       @paused="paused"
     ></youtube>
@@ -19,7 +20,9 @@ export default Vue.extend({
       videoId: "_cOFCiiQIvI",
       playerVars: {
         origin: "http://localhost:8080"
-      }
+      },
+      iframeHeight: 0,
+      iframeWidth: 0
     };
   },
   watch: {
@@ -31,12 +34,25 @@ export default Vue.extend({
       }
     }
   },
+  created() {
+    addEventListener("resize", this.forceRerender);
+  },
+  destroyed() {
+    removeEventListener("resize", this.forceRerender);
+  },
+  mounted() {
+    this.forceRerender();
+  },
   methods: {
     playing(): void {
       this.$store.state.videoPlaying = true;
     },
     paused(): void {
       this.$store.state.videoPlaying = false;
+    },
+    forceRerender(): void {
+      this.iframeWidth = this.$refs.iframeContainer.clientWidth;
+      this.iframeHeight = (this.iframeWidth / 16) * 9;
     }
   }
 });
@@ -45,14 +61,5 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .iframe-container {
   overflow: hidden;
-  position: relative;
-  iframe {
-    border: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
 }
 </style>

@@ -6,7 +6,7 @@
       blended pop, jazz, and funk
     </p>
     <p class="text-cursive pb-7">Music made by city people, for city people</p>
-    <v-btn class="primary-btn " rounded @click="playVideo()">
+    <v-btn class="primary-btn " rounded @click="playVideo">
       <span class="text-spacing-normal text-sans-serif">
         PLAY SAMPLE
       </span>
