@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ writeUp.title }}</h1>
+    <h1 class="pb-6">{{ writeUp.title }}</h1>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <p class="writeUp__message" v-html="writeUp.message"></p>
   </div>
