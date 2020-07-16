@@ -13,11 +13,12 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { videoId } from "@/store/data";
 export default Vue.extend({
   name: "IntroVideo",
   data() {
     return {
-      videoId: "_cOFCiiQIvI",
+      videoId: videoId,
       playerVars: {
         origin: "http://localhost:8080"
       },

@@ -4,6 +4,7 @@
       <intro-text class="sm-col4 pb-10" />
       <intro-video class="sm-col4" />
       <write-up :write-up="chunk1" class="sm-col4" />
+      <image-card :image-card="imageCard1" class="sm-col2-center" />
     </div>
   </div>
 </template>
@@ -13,17 +14,20 @@ import Vue from "vue";
 import IntroText from "@/components/IntroText.vue";
 import IntroVideo from "@/components/IntroVideo.vue";
 import WriteUp from "@/components/WriteUp.vue";
-import { chunk1 } from "@/store/data";
+import ImageCard from "@/components/ImageCard.vue";
+import { chunk1, imageCard1 } from "@/store/data";
 export default Vue.extend({
   name: "Information",
   components: {
     IntroText,
     IntroVideo,
-    WriteUp
+    WriteUp,
+    ImageCard
   },
   data() {
     return {
-      chunk1: chunk1
+      chunk1: chunk1,
+      imageCard1: imageCard1
     };
   }
 });

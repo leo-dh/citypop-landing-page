@@ -1,4 +1,4 @@
-import { WriteUp } from "@/types/model";
+import { WriteUp, ImageCard } from "@/types/model";
 export const chunk1: WriteUp = {
   title: "Origins",
   message:
@@ -23,4 +23,20 @@ export const chunk3: WriteUp = {
     "Given that city pop is an opulent amalgamation multiple music genres, ‘City pop’ is less a strict genre term but rather a broad vibe classification, an aesthetic experience." +
     "\n \n" +
     "<b> Experience it for yourself to find out more! </b>"
+};
+
+export const videoId = "_cOFCiiQIvI";
+
+export const imageCard1: ImageCard = {
+  imagePath: "imageCard/PacificBreezeAlbumArtByHiroshiNagai.jpg",
+  imageCaptions: "‘Pacific Breeze’ Album Cover" + "\n" + " by Hiroshi Nagai"
+};
+
+export const imageCard2: ImageCard = {
+  imagePath: "imageCard/PlasticLoveArtworkByUsagiHime.jpg",
+  imageCaptions: "Plastic Love Thumbnail Artwork" + "\n" + " by Usagihimi"
+};
+export const imageCard3: ImageCard = {
+  imagePath: "imageCard/SonyMusicEditionCityPopAlbumArtbyEizinSuzuki.jpg",
+  imageCaptions: "City Pop: Sony Music Edition Album Cover" + "\n" + " by Eizin Suzuki"
 };

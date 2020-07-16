@@ -42,11 +42,15 @@ h6 {
 @media #{map-get($display-breakpoints, 'xs-only')} {
   .grid-layout {
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 16px;
+    column-gap: 8px;
     padding: 0 16px;
   }
   .sm-col4 {
-    grid-column: 1 / 5;
+    grid-column: 1 / span 4;
+  }
+
+  .sm-col2-center {
+    grid-column: 2 / span 2;
   }
 
   p {
