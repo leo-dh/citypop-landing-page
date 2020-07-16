@@ -6,3 +6,6 @@ export interface ImageCard {
   imagePath: string;
   imageCaptions?: string;
 }
+export interface Album {
+  imagePath: string;
+}

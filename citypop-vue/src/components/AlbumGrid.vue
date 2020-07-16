@@ -1,23 +1,28 @@
 <template>
   <div class="albumGrid">
-    <album-card :src="temp" />
-    <album-card :src="temp" />
-    <album-card :src="temp" />
+    <template v-for="album in albums">
+      <album-card :key="album.imagePath" :src="album.imagePath" />
+    </template>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue, { PropType } from "vue";
 import AlbumCard from "@/components/AlbumCard.vue";
+import { Album } from "@/types/model";
 export default Vue.extend({
   name: "AlbumList",
   components: {
     AlbumCard
   },
+  props: {
+    albums: {
+      type: Object as PropType<Album[]>,
+      required: true
+    }
+  },
   data() {
-    return {
-      temp: "albumcovers/170355-dosii.jpg"
-    };
+    return {};
   }
 });
 </script>
@@ -34,17 +39,15 @@ export default Vue.extend({
     grid-row: 1 / 1;
     grid-column: 1 / 1;
   }
-  > *:first-child {
+  > :first-child {
     grid-row: 1 / 3;
     grid-column: 1 / 3;
   }
-  &__small {
-    grid-row: 1 / 1;
-    grid-column: 1 / 1;
-  }
-  &__big {
-    grid-row: 1 / 3;
-    grid-column: 1 / 3;
+  > :nth-child(7),
+  > :nth-child(13),
+  > :nth-child(17) {
+    grid-row: span 2;
+    grid-column: span 2;
   }
 }
 </style>

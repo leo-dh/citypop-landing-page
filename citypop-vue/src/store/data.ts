@@ -1,4 +1,4 @@
-import { WriteUp, ImageCard } from "@/types/model";
+import { WriteUp, ImageCard, Album } from "@/types/model";
 export const chunk1: WriteUp = {
   title: "Origins",
   message:
@@ -40,3 +40,24 @@ export const imageCard3: ImageCard = {
   imagePath: "imageCard/SonyMusicEditionCityPopAlbumArtbyEizinSuzuki.jpg",
   imageCaptions: "City Pop: Sony Music Edition Album Cover" + "\n" + " by Eizin Suzuki"
 };
+
+export const albums: Album[] = [
+  { imagePath: "albumcovers/170355-dosii.jpg" },
+  { imagePath: "albumcovers/90yonge st - Kona (Feat. Jennifer Choi).jpg" },
+  { imagePath: "albumcovers/Anri-HeavensBeach.jpg" },
+  { imagePath: "albumcovers/BigWaveAlbumCover.jpg" },
+  { imagePath: "albumcovers/ForYouTatsuroYamashita.jpg" },
+  { imagePath: "albumcovers/KikuchiMomokoAdventureAlbumCover.jpg" },
+  { imagePath: "albumcovers/LabyrinthMondoGrosso.jpg" },
+  { imagePath: "albumcovers/LoveTripTakakoMamiya.jpg" },
+  { imagePath: "albumcovers/MariyaTakeuchiPlasticLoveVinylCover.jpg" },
+  { imagePath: "albumcovers/Piper-SummerBreeze.jpg" },
+  { imagePath: "albumcovers/Rideontime_tatsyamashita.jpg" },
+  { imagePath: "albumcovers/The-Solutions-Mood-For-Love.jpg" },
+  { imagePath: "albumcovers/Yubin_solo_debut_album_cover.jpg" },
+  { imagePath: "albumcovers/Yukika_Cherries_Jubiles_album_cover.jpg" },
+  { imagePath: "albumcovers/givemethelight-uju.jpg" },
+  { imagePath: "albumcovers/muzie-new-wave-city.jpg" },
+  { imagePath: "albumcovers/neon-yukika.jpg" },
+  { imagePath: "albumcovers/nightinseoul-uju.jpg" }
+];
