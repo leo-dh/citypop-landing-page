@@ -35,7 +35,7 @@ export default Vue.extend({
   align-items: center;
   justify-content: center;
   position: relative;
-  grid-column: 1 / 5;
+  grid-column: 1 / -1;
 
   &__content {
     display: flex;
@@ -56,8 +56,9 @@ export default Vue.extend({
     }
 
     &__button {
-      font-size: 1rem;
+      font-size: 1em;
       z-index: 2;
+      text-transform: none;
     }
   }
 

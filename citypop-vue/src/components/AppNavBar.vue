@@ -11,6 +11,7 @@
         :key="route.path"
         :to="route.path"
         class="navbar__buttons"
+        :exact="route.path === '/'"
         text
       >
         {{ route.name }}
@@ -53,7 +54,7 @@ export default Vue.extend({
   font-size: 1.2em;
   text-decoration: none;
   color: $color-white;
-  &:hover {
+  &:not(.router-link-active):hover {
     color: $color-red;
   }
 }
