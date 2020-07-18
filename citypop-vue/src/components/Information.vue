@@ -1,15 +1,15 @@
 <template>
   <div class="background-wrapper">
-    <div class="grid-layout">
-      <intro-text class="sm-col4 pb-10" />
-      <intro-video class="sm-col4 pb-12" />
-      <write-up :write-up="chunk1" class="sm-col4 pb-6" />
-      <image-card :image-card="imageCard1" class="sm-col2-center pb-10" />
-      <write-up :write-up="chunk2" class="sm-col4 pb-6" />
-      <image-card :image-card="imageCard2" class="sm-col2-center pb-10" />
-      <write-up :write-up="chunk3" class="sm-col4 pb-6" />
-      <image-card :image-card="imageCard3" class="sm-col2-center pb-12" />
-      <album-collection class="sm-col4" />
+    <div class="grid-layout info-layout">
+      <intro-text id="info1" class="sm-col4 pb-10 " />
+      <intro-video id="info2" class="sm-col4 pb-12" />
+      <write-up id="info3" :write-up="chunk1" class="sm-col4 pb-6 " />
+      <image-card id="info4" :image-card="imageCard1" class="sm-col2-center pb-10 " />
+      <write-up id="info5" :write-up="chunk2" class="sm-col4 pb-6 " />
+      <image-card id="info6" :image-card="imageCard2" class="sm-col2-center pb-10 " />
+      <write-up id="info7" :write-up="chunk3" class="sm-col4 pb-6 " />
+      <image-card id="info8" :image-card="imageCard3" class="sm-col2-center pb-12 " />
+      <album-collection class="sm-col4 lg-col-10" />
     </div>
   </div>
 </template>
@@ -51,6 +51,36 @@ export default Vue.extend({
   background-size: auto 100%;
   background-blend-mode: multiply;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 4em 0;
+}
+
+@media #{map-get($display-breakpoints, 'lg-only')} {
+  .info-layout {
+    > :nth-child(6) {
+      grid-column: span 4 / -1;
+      grid-row: 3 / span 1;
+    }
+    > :nth-child(1),
+    > :nth-child(4),
+    > :nth-child(8) {
+      grid-column: 1 / span 4;
+    }
+    > :nth-child(2) {
+      grid-column: span 5 / -1;
+    }
+    > :nth-child(5) {
+      grid-column: 1 / span 5;
+    }
+    > :nth-child(3) {
+      grid-column: span 5 / -1;
+      grid-row: 2 / span 1;
+    }
+    > :nth-child(7) {
+      grid-column: span 5 / -1;
+      grid-row: 4 / span 1;
+    }
+  }
 }
 </style>

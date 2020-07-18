@@ -39,6 +39,12 @@ h6 {
   flex-direction: column;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media #{map-get($display-breakpoints, 'xs-only')} {
   .grid-layout {
     grid-template-columns: repeat(4, 1fr);
@@ -55,5 +61,16 @@ h6 {
 
   p {
     font-size: 13px;
+  }
+}
+
+@media #{map-get($display-breakpoints, 'lg-only')} {
+  .grid-layout {
+    grid-template-columns: repeat(10, 80px);
+    column-gap: 30px;
+    justify-items: center;
+  }
+  .lg-col-10 {
+    grid-column: 1 / -1;
   }
 }

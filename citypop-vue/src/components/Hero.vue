@@ -1,18 +1,20 @@
 <template>
-  <div class="grid-layout">
-    <div class="hero ">
-      <div class="hero__content">
-        <h1 class="hero__content__title ">Discover Citypop</h1>
-        <v-btn class="primary-btn text-cursive text-decoration-none hero__content__button" rounded
-          >Lets go!</v-btn
-        >
+  <div class="wrapper">
+    <div class="grid-layout">
+      <div class="hero ">
+        <div class="hero__content">
+          <h1 class="hero__content__title ">Discover Citypop</h1>
+          <v-btn class="primary-btn text-cursive text-decoration-none hero__content__button" rounded
+            >Lets go!</v-btn
+          >
+        </div>
+        <img
+          src="@/assets/skyline-2730410.svg"
+          alt="watermark of cityskyline"
+          srcset=""
+          class="hero__watermark"
+        />
       </div>
-      <img
-        src="@/assets/skyline-2730410.svg"
-        alt="watermark of cityskyline"
-        srcset=""
-        class="hero__watermark"
-      />
     </div>
   </div>
 </template>
