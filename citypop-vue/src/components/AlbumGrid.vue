@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from "vue";
+import Vue from "vue";
 import AlbumCard from "@/components/AlbumCard.vue";
 import { Album } from "@/types/model";
 export default Vue.extend({
@@ -17,7 +17,7 @@ export default Vue.extend({
   },
   props: {
     albums: {
-      type: Object as PropType<Album[]>,
+      type: Array as () => Array<Album>,
       required: true
     }
   },

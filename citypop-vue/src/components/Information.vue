@@ -1,14 +1,14 @@
 <template>
   <div class="background-wrapper">
     <div class="grid-layout info-layout">
-      <intro-text id="info1" class="sm-col4 pb-10 " />
-      <intro-video id="info2" class="sm-col4 pb-12" />
-      <write-up id="info3" :write-up="chunk1" class="sm-col4 pb-6 " />
-      <image-card id="info4" :image-card="imageCard1" class="sm-col2-center pb-10 " />
-      <write-up id="info5" :write-up="chunk2" class="sm-col4 pb-6 " />
-      <image-card id="info6" :image-card="imageCard2" class="sm-col2-center pb-10 " />
-      <write-up id="info7" :write-up="chunk3" class="sm-col4 pb-6 " />
-      <image-card id="info8" :image-card="imageCard3" class="sm-col2-center pb-12 " />
+      <intro-text class="sm-col4 pb-10 " />
+      <intro-video class="sm-col4 pb-12" />
+      <write-up :write-up="chunk1" class="sm-col4 pb-6 " />
+      <image-card :image-card="imageCard1" class="sm-col2-center pb-10 " />
+      <write-up :write-up="chunk2" class="sm-col4 pb-6 " />
+      <image-card :image-card="imageCard2" class="sm-col2-center pb-10 " />
+      <write-up :write-up="chunk3" class="sm-col4 pb-6 " />
+      <image-card :image-card="imageCard3" class="sm-col2-center pb-12 " />
       <album-collection class="sm-col4 lg-col-10" />
     </div>
   </div>

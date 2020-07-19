@@ -62,5 +62,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .iframe-container {
   overflow: hidden;
+  width: 100%;
 }
 </style>
