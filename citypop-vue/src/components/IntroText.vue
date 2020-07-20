@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1 class="pb-8">What is City pop?</h1>
-    <p>
+    <h1 class="mb-8 introText__header">What is City pop?</h1>
+    <p class="introText__para">
       City pop (シティーポップ) is a genre of music popular in Japan in the late 70s and 80s that
       blended pop, jazz, and funk
     </p>
-    <p class="text-cursive pb-7">Music made by city people, for city people</p>
-    <v-btn class="primary-btn " rounded @click="playVideo">
-      <span class="text-spacing-normal text-sans-serif">
+    <p class="text-cursive mb-9 introText__para">Music made by city people, for city people</p>
+    <v-btn class="primary-btn " rounded :x-large="$vuetify.breakpoint.lgAndUp" @click="playVideo">
+      <span class="introText__btntext text-spacing-normal text-sans-serif">
         PLAY SAMPLE
       </span>
       <v-icon right>mdi-play-circle</v-icon>
@@ -30,4 +30,21 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.introText__header {
+  @media #{map-get($display-breakpoints, 'lg-only')} {
+    font-size: 3em;
+  }
+}
+.introText__para {
+  @media #{map-get($display-breakpoints, 'lg-only')} {
+    font-size: 1.1em;
+    width: 80%;
+  }
+}
+.introText__btntext {
+  @media #{map-get($display-breakpoints, 'lg-only')} {
+    font-size: 1.1em;
+  }
+}
+</style>

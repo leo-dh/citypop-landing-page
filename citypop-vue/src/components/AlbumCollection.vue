@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="pb-10">Popular Albums</h1>
+    <h1 class="pb-10 text-lg-center albumCollection__header">Popular Albums</h1>
     <album-grid :albums="albums" />
   </div>
 </template>
@@ -21,3 +21,11 @@ export default Vue.extend({
   }
 });
 </script>
+
+<style lang="scss" scoped>
+.albumCollection__header {
+  @media #{map-get($display-breakpoints, 'lg-only')} {
+    font-size: 3em;
+  }
+}
+</style>

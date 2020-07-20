@@ -1,10 +1,8 @@
 <template>
-  <v-card color="transparent">
-    <div>
-      <v-img :src="imageSrc"></v-img>
-      <p class="text-cursive pt-2 mb-0 text-center imageCaptions">{{ imageCard.imageCaptions }}</p>
-    </div>
-  </v-card>
+  <div class="imageCard">
+    <v-img :src="imageSrc"></v-img>
+    <p class="text-cursive mt-2 mb-0 text-center imageCaptions">{{ imageCard.imageCaptions }}</p>
+  </div>
 </template>
 
 <script lang="ts">
@@ -27,7 +25,13 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.imageCaptions {
-  white-space: pre-line;
+.imageCard {
+  width: clamp(300px, 80%, 500px);
+  .imageCaptions {
+    white-space: pre-line;
+    @media #{map-get( $display-breakpoints, 'lg-only' )} {
+      font-size: 1.1rem;
+    }
+  }
 }
 </style>

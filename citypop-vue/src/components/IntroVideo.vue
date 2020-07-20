@@ -63,5 +63,7 @@ export default Vue.extend({
 .iframe-container {
   overflow: hidden;
   width: 100%;
+  display: grid;
+  place-items: center;
 }
 </style>

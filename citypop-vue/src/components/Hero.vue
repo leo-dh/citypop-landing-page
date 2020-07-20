@@ -3,9 +3,15 @@
     <div class="grid-layout">
       <div class="hero ">
         <div class="hero__content">
-          <h1 class="hero__content__title ">Discover Citypop</h1>
-          <v-btn class="primary-btn text-cursive text-decoration-none hero__content__button" rounded
-            >Lets go!</v-btn
+          <h1 class="hero__content__title ">
+            Discover <br :v-if="$vuetify.breakpoint.lgAndUp" />
+            Citypop
+          </h1>
+          <v-btn
+            class="primary-btn text-cursive text-decoration-none hero__content__button"
+            rounded
+            :x-large="$vuetify.breakpoint.lgAndUp"
+            ><span class="hero__content__button__text">Lets go!</span></v-btn
           >
         </div>
         <img
@@ -55,12 +61,20 @@ export default Vue.extend({
       text-align: center;
       font-weight: bold;
       margin-bottom: 0.6em;
+      @media #{map-get($display-breakpoints, 'lg-only')} {
+        font-size: 6em;
+      }
     }
 
     &__button {
-      font-size: 1em;
       z-index: 2;
-      text-transform: none;
+      &__text {
+        font-size: 1em;
+        text-transform: none;
+        @media #{map-get($display-breakpoints, 'lg-only')} {
+          font-size: 2em;
+        }
+      }
     }
   }
 

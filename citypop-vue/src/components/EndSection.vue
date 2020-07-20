@@ -3,11 +3,14 @@
     <div class="endsection overflow-hidden">
       <div class="grid-layout ">
         <div class="endsection__content">
-          <h1 class="endsection__content__title mb-2">Love what you hear?</h1>
+          <h1 class="endsection__content__title mb-xs-2 mb-lg-12">Love what you hear?</h1>
           <v-btn
-            class="primary-btn text-cursive text-decoration-none endsection__content__button"
+            class="primary-btn endsection__content__button"
             rounded
-            >find out more!</v-btn
+            :x-large="$vuetify.breakpoint.lgAndUp"
+            ><span class="text-cursive endsection__content__button__text"
+              >find out more!</span
+            ></v-btn
           >
         </div>
       </div>
@@ -72,11 +75,19 @@ export default Vue.extend({
 
     &__title {
       text-align: center;
+      @media #{map-get($display-breakpoints, 'lg-only')} {
+        font-size: 5em;
+      }
     }
     &__button {
-      font-size: 1em;
-      text-transform: none;
       z-index: 2;
+      &__text {
+        font-size: 1em;
+        text-transform: none;
+        @media #{map-get($display-breakpoints, 'lg-only')} {
+          font-size: 1.5em;
+        }
+      }
     }
   }
 }

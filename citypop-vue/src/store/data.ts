@@ -34,7 +34,7 @@ export const imageCard1: ImageCard = {
 
 export const imageCard2: ImageCard = {
   imagePath: "imageCard/PlasticLoveArtworkByUsagiHime.jpg",
-  imageCaptions: "Plastic Love Thumbnail Artwork" + "\n" + " by Usagihimi"
+  imageCaptions: "Plastic Love Thumbnail Artwork" + "\n" + " by Usagihime"
 };
 export const imageCard3: ImageCard = {
   imagePath: "imageCard/SonyMusicEditionCityPopAlbumArtbyEizinSuzuki.jpg",

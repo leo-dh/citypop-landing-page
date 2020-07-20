@@ -1,15 +1,15 @@
 <template>
   <div class="background-wrapper">
     <div class="grid-layout info-layout">
-      <intro-text class="sm-col4 pb-10 " />
-      <intro-video class="sm-col4 pb-12" />
-      <write-up :write-up="chunk1" class="sm-col4 pb-6 " />
-      <image-card :image-card="imageCard1" class="sm-col2-center pb-10 " />
-      <write-up :write-up="chunk2" class="sm-col4 pb-6 " />
-      <image-card :image-card="imageCard2" class="sm-col2-center pb-10 " />
-      <write-up :write-up="chunk3" class="sm-col4 pb-6 " />
-      <image-card :image-card="imageCard3" class="sm-col2-center pb-12 " />
-      <album-collection class="sm-col4 lg-col-10" />
+      <intro-text class="sm-col4 mb-xs-10 mb-lg-16 " />
+      <intro-video class="sm-col4 mb-xs-12 mb-lg-16" />
+      <write-up :write-up="chunk1" class="sm-col4 mb-xs-6 " />
+      <image-card :image-card="imageCard1" class="sm-col2-center mb-xs-10 " />
+      <write-up :write-up="chunk2" class="sm-col4 mb-xs-6 " />
+      <image-card :image-card="imageCard2" class="sm-col2-center mb-xs-10 " />
+      <write-up :write-up="chunk3" class="sm-col4 mb-xs-6 " />
+      <image-card :image-card="imageCard3" class="sm-col2-center mb-xs-12 " />
+      <album-collection class="sm-col4 lg-col-10 mt-lg-16" />
     </div>
   </div>
 </template>
@@ -58,11 +58,11 @@ export default Vue.extend({
 
 @media #{map-get($display-breakpoints, 'lg-only')} {
   .info-layout {
+    row-gap: 6em;
     > :nth-child(6) {
       grid-column: span 4 / -1;
       grid-row: 3 / span 1;
     }
-    > :nth-child(1),
     > :nth-child(4),
     > :nth-child(8) {
       grid-column: 1 / span 4;
@@ -80,6 +80,9 @@ export default Vue.extend({
     > :nth-child(7) {
       grid-column: span 5 / -1;
       grid-row: 4 / span 1;
+    }
+    > :nth-child(1) {
+      grid-column: 1 / span 5;
     }
   }
 }
