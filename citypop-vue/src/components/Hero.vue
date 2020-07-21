@@ -11,6 +11,7 @@
             class="primary-btn text-cursive text-decoration-none hero__content__button"
             rounded
             :x-large="$vuetify.breakpoint.lgAndUp"
+            @click="scrollToView"
             ><span class="hero__content__button__text">Lets go!</span></v-btn
           >
         </div>
@@ -31,6 +32,14 @@ export default Vue.extend({
   name: "Hero",
   data() {
     return {};
+  },
+  methods: {
+    scrollToView() {
+      const el: Element = document.getElementsByClassName("scrollTo")[0];
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   }
 });
 </script>

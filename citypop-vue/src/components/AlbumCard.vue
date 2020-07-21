@@ -1,6 +1,6 @@
 <template>
   <v-hover v-slot:default="{ hover }">
-    <v-img :src="imageSrc" :class="{ 'on-hover': hover }" @click="doSomething"></v-img>
+    <img :src="imageSrc" :class="{ 'on-hover': hover }" style="width: 100%;" @click="doSomething" />
   </v-hover>
 </template>
 
@@ -28,7 +28,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.v-image {
+img {
   opacity: 0.65;
   transition: opacity 0.3s ease-in-out;
   &.on-hover {

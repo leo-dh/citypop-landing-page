@@ -1,5 +1,5 @@
 <template>
-  <div class="background-wrapper">
+  <div class="background-wrapper scrollTo">
     <div class="grid-layout info-layout">
       <intro-text class="sm-col4 mb-xs-10 mb-lg-16 " />
       <intro-video class="sm-col4 mb-xs-12 mb-lg-16" />

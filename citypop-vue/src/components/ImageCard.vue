@@ -1,6 +1,6 @@
 <template>
   <div class="imageCard">
-    <v-img :src="imageSrc"></v-img>
+    <img :src="imageSrc" style="width: 100%;" />
     <p class="text-cursive mt-2 mb-0 text-center imageCaptions">{{ imageCard.imageCaptions }}</p>
   </div>
 </template>
@@ -26,7 +26,10 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .imageCard {
-  width: clamp(300px, 80%, 500px);
+  width: 100%;
+  @media #{map-get($display-breakpoints, "lg-only")} {
+    width: clamp(300px, 80%, 500px);
+  }
   .imageCaptions {
     white-space: pre-line;
     @media #{map-get( $display-breakpoints, 'lg-only' )} {
