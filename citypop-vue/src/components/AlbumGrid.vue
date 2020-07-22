@@ -51,7 +51,7 @@ export default Vue.extend({
   }
 }
 
-@media #{map-get($display-breakpoints, 'lg-only')} {
+@media #{map-get($display-breakpoints, 'md-and-up')} {
   .albumGrid {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(5, 1fr);

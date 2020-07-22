@@ -5,12 +5,12 @@
       @click="$store.state.drawer = !$store.state.drawer"
     ></v-app-bar-nav-icon>
     <v-spacer></v-spacer>
-    <div v-if="$vuetify.breakpoint.mdAndUp">
+    <div v-if="$vuetify.breakpoint.mdAndUp" class="mr-10">
       <router-link
         v-for="route in routes"
         :key="route.path"
         :to="route.path"
-        class="navbar__buttons"
+        class="navbar__buttons mx-2"
         :exact="route.path === '/'"
         text
       >

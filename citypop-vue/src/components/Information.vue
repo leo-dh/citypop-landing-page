@@ -1,15 +1,15 @@
 <template>
   <div class="background-wrapper scrollTo">
     <div class="grid-layout info-layout">
-      <intro-text class="sm-col4 mb-xs-10 mb-lg-16 " />
-      <intro-video class="sm-col4 mb-xs-12 mb-lg-16" />
-      <write-up :write-up="chunk1" class="sm-col4 mb-xs-6 " />
-      <image-card :image-card="imageCard1" class="sm-col2-center mb-xs-10 " />
-      <write-up :write-up="chunk2" class="sm-col4 mb-xs-6 " />
-      <image-card :image-card="imageCard2" class="sm-col2-center mb-xs-10 " />
-      <write-up :write-up="chunk3" class="sm-col4 mb-xs-6 " />
-      <image-card :image-card="imageCard3" class="sm-col2-center mb-xs-12 " />
-      <album-collection class="sm-col4 lg-col-10 mt-lg-16" />
+      <intro-text class="sm-span-all mb-10 mb-lg-16 " />
+      <intro-video class="sm-span-all mb-12 mb-lg-16" />
+      <write-up :write-up="chunk1" class="sm-span-all mb-6 " />
+      <image-card :image-card="imageCard1" class="sm-col2-center mb-10 " />
+      <write-up :write-up="chunk2" class="sm-span-all mb-6 " />
+      <image-card :image-card="imageCard2" class="sm-col2-center mb-10 " />
+      <write-up :write-up="chunk3" class="sm-span-all mb-6 " />
+      <image-card :image-card="imageCard3" class="sm-col2-center mb-12 " />
+      <album-collection class="span-all mt-lg-16" />
     </div>
   </div>
 </template>
@@ -56,9 +56,9 @@ export default Vue.extend({
   padding: 4em 0;
 }
 
-@media #{map-get($display-breakpoints, 'lg-only')} {
-  .info-layout {
-    row-gap: 6em;
+.info-layout {
+  @media #{map-get($display-breakpoints, 'md-and-up')} {
+    row-gap: 3em;
     > :nth-child(6) {
       grid-column: span 4 / -1;
       grid-row: 3 / span 1;
@@ -84,6 +84,9 @@ export default Vue.extend({
     > :nth-child(1) {
       grid-column: 1 / span 5;
     }
+  }
+  @media #{map-get($display-breakpoints, 'lg-only')} {
+    row-gap: 6em;
   }
 }
 </style>

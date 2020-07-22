@@ -45,18 +45,23 @@ h6 {
   align-items: center;
 }
 
+.span-all {
+  grid-column: 1 / -1;
+}
+
 @media #{map-get($display-breakpoints, 'xs-only')} {
   .grid-layout {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 8px;
     padding: 0 16px;
   }
-  .sm-col4 {
-    grid-column: 1 / span 4;
-  }
 
   .sm-col2-center {
     grid-column: 2 / span 2;
+  }
+
+  .sm-span-all {
+    grid-column: 1 / -1;
   }
 
   p {
@@ -68,9 +73,19 @@ h6 {
   .grid-layout {
     grid-template-columns: repeat(10, 80px);
     column-gap: 30px;
-    justify-items: center;
   }
-  .lg-col-10 {
+  .lg-span-all {
+    grid-column: 1 / -1;
+  }
+}
+
+@media #{map-get($display-breakpoints, 'md-only')} {
+  .grid-layout {
+    grid-template-columns: repeat(10, 70px);
+    column-gap: 24px;
+  }
+
+  .md-span-all {
     grid-column: 1 / -1;
   }
 }

@@ -1,14 +1,20 @@
 <template>
-  <div class="imageCard">
-    <img :src="imageSrc" style="width: 100%;" />
-    <p class="text-cursive mt-2 mb-0 text-center imageCaptions">{{ imageCard.imageCaptions }}</p>
+  <div class="imageCard ">
+    <div class="fade-transition fade-in">
+      <img :src="imageSrc" style="width: 100%;" />
+      <p class="text-cursive mt-2 mb-0 text-center imageCaptions">
+        {{ imageCard.imageCaptions }}
+      </p>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue, { PropType } from "vue";
 import { ImageCard } from "@/types/model";
-export default Vue.extend({
+import mixins from "vue-typed-mixins";
+import FadeInMixin from "@/mixins/FadeInMixin";
+export default mixins(FadeInMixin).extend({
   name: "ImageCard",
   props: {
     imageCard: {
@@ -36,5 +42,12 @@ export default Vue.extend({
       font-size: 1.1rem;
     }
   }
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.fade-transition {
+  transition: all 0.3s ease-out;
 }
 </style>

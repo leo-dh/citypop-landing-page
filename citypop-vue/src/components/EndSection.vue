@@ -3,11 +3,14 @@
     <div class="endsection overflow-hidden">
       <div class="grid-layout ">
         <div class="endsection__content">
-          <h1 class="endsection__content__title mb-xs-2 mb-lg-12">Love what you hear?</h1>
+          <h1 class="endsection__content__title mb-xs-2 mb-lg-12 fade-transition fade-in">
+            Love what you hear?
+          </h1>
           <v-btn
-            class="primary-btn endsection__content__button"
+            class="primary-btn endsection__content__button fade-transition fade-in"
             rounded
             :x-large="$vuetify.breakpoint.lgAndUp"
+            to="/resources"
             ><span class="text-cursive endsection__content__button__text"
               >find out more!</span
             ></v-btn
@@ -21,8 +24,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-export default Vue.extend({
+import mixins from "vue-typed-mixins";
+import FadeInMixin from "@/mixins/FadeInMixin";
+export default mixins(FadeInMixin).extend({
   name: "EndSection",
   data() {
     return {};
@@ -90,5 +94,12 @@ export default Vue.extend({
       }
     }
   }
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.fade-transition {
+  transition: all 0.3s ease-out;
 }
 </style>
