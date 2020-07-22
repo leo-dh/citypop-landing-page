@@ -14,7 +14,7 @@ export default Vue.extend({
   },
   methods: {
     scrollCallback(): void {
-      this.$data.fadeInElements.forEach((el: Element, i: number): void => {
+      this.fadeInElements.forEach((el: Element, i: number): void => {
         if (this.isElemVisible(el)) {
           el.classList.remove("fade-in");
           this.$data.fadeInElements.splice(i, 1);

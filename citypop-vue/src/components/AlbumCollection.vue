@@ -1,15 +1,18 @@
 <template>
   <div>
-    <h1 class="pb-10 text-lg-center albumCollection__header">Popular Albums</h1>
+    <h1 class="pb-10 text-lg-center text-md-center albumCollection__header fade-transition fade-in">
+      Popular Albums
+    </h1>
     <album-grid :albums="albums" />
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
 import AlbumGrid from "@/components/AlbumGrid.vue";
 import { albums } from "@/store/data";
-export default Vue.extend({
+import mixins from "vue-typed-mixins";
+import FadeInMixin from "@/mixins/FadeInMixin";
+export default mixins(FadeInMixin).extend({
   name: "AlbumCollection",
   components: {
     AlbumGrid
@@ -27,5 +30,12 @@ export default Vue.extend({
   @media #{map-get($display-breakpoints, 'lg-only')} {
     font-size: 3em;
   }
+}
+.fade-transition {
+  transition: all 0.2s ease-out;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
 }
 </style>

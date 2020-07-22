@@ -1,6 +1,11 @@
 <template>
   <v-hover v-slot:default="{ hover }">
-    <img :src="imageSrc" :class="{ 'on-hover': hover }" style="width: 100%;" @click="doSomething" />
+    <img
+      v-lazy="imageSrc"
+      :class="{ 'on-hover': hover }"
+      style="width: 100%;"
+      @click="doSomething"
+    />
   </v-hover>
 </template>
 
@@ -34,6 +39,23 @@ img {
   &.on-hover {
     opacity: 1;
     cursor: pointer;
+  }
+  &[lazy="loaded"] {
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    animation-timing-function: ease-out;
+    @keyframes fadein {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.65;
+      }
+    }
   }
 }
 </style>

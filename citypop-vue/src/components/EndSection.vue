@@ -3,7 +3,7 @@
     <div class="endsection overflow-hidden">
       <div class="grid-layout ">
         <div class="endsection__content">
-          <h1 class="endsection__content__title mb-xs-2 mb-lg-12 fade-transition fade-in">
+          <h1 class="endsection__content__title mb-2 mb-md-6 mb-lg-12 fade-transition fade-in">
             Love what you hear?
           </h1>
           <v-btn
@@ -17,7 +17,9 @@
           >
         </div>
       </div>
-      <p class="endsection__watermark endsection__watermark--top text-sans-serif">DISCOVER</p>
+      <p class="endsection__watermark endsection__watermark--top text-sans-serif">
+        DISCOVER
+      </p>
       <p class="endsection__watermark endsection__watermark--bottom text-sans-serif">CITY POP</p>
     </div>
   </div>
@@ -45,26 +47,30 @@ export default mixins(FadeInMixin).extend({
   position: relative;
   &__watermark {
     position: absolute;
-    opacity: 0.1;
+    opacity: 0.05;
     font-size: 5em;
     transform: rotate(15deg);
     text-overflow: inherit;
     white-space: nowrap;
-    @media #{map-get($display-breakpoints, 'lg-only')} {
+    margin: 0;
+    @media #{map-get($display-breakpoints, 'md-and-up')} {
       transform: none;
+      font-size: 5em;
+    }
+    @media #{map-get($display-breakpoints, 'lg-only')} {
       font-size: 8em;
     }
     &--top {
       top: 0px;
-      @media #{map-get($display-breakpoints, 'lg-only')} {
-        top: -0.7em;
+      @media #{map-get($display-breakpoints, 'md-and-up')} {
+        top: -0.5em;
         left: -0.2em;
       }
     }
     &--bottom {
       bottom: 0px;
-      @media #{map-get($display-breakpoints, 'lg-only')} {
-        bottom: -0.7em;
+      @media #{map-get($display-breakpoints, 'md-and-up')} {
+        bottom: -0.5em;
         right: -0.2em;
       }
     }
@@ -79,6 +85,9 @@ export default mixins(FadeInMixin).extend({
 
     &__title {
       text-align: center;
+      @media #{map-get($display-breakpoints, 'md-only')} {
+        font-size: 4em;
+      }
       @media #{map-get($display-breakpoints, 'lg-only')} {
         font-size: 5em;
       }
@@ -88,6 +97,9 @@ export default mixins(FadeInMixin).extend({
       &__text {
         font-size: 1em;
         text-transform: none;
+        @media #{map-get($display-breakpoints, 'md-only')} {
+          font-size: 1.3em;
+        }
         @media #{map-get($display-breakpoints, 'lg-only')} {
           font-size: 1.5em;
         }

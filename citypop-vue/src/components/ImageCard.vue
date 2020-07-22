@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropType } from "vue";
+import { PropType } from "vue";
 import { ImageCard } from "@/types/model";
 import mixins from "vue-typed-mixins";
 import FadeInMixin from "@/mixins/FadeInMixin";
