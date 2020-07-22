@@ -4,11 +4,11 @@
       <intro-text class="sm-span-all mb-10 mb-lg-16 " />
       <intro-video class="sm-span-all mb-12 mb-lg-16" />
       <write-up :write-up="chunk1" class="sm-span-all mb-6 " />
-      <image-card :image-card="imageCard1" class="sm-col2-center mb-10 " />
+      <image-card :image-card="imageCard1" class="sm-col2-center mb-10 mb-md-6" />
       <write-up :write-up="chunk2" class="sm-span-all mb-6 " />
-      <image-card :image-card="imageCard2" class="sm-col2-center mb-10 " />
+      <image-card :image-card="imageCard2" class="sm-col2-center mb-10 mb-md-6" />
       <write-up :write-up="chunk3" class="sm-span-all mb-6 " />
-      <image-card :image-card="imageCard3" class="sm-col2-center mb-12 " />
+      <image-card :image-card="imageCard3" class="sm-col2-center mb-12 mb-md-6 " />
       <album-collection class="span-all mt-lg-16" />
     </div>
   </div>
@@ -59,23 +59,18 @@ export default Vue.extend({
 .info-layout {
   @media #{map-get($display-breakpoints, 'md-and-up')} {
     row-gap: 3em;
-    > :nth-child(6) {
-      grid-column: span 4 / -1;
-      grid-row: 3 / span 1;
-    }
     > :nth-child(4),
+    > :nth-child(6),
     > :nth-child(8) {
       grid-column: 1 / span 4;
-    }
-    > :nth-child(2) {
-      grid-column: span 5 / -1;
-    }
-    > :nth-child(5) {
-      grid-column: 1 / span 5;
     }
     > :nth-child(3) {
       grid-column: span 5 / -1;
       grid-row: 2 / span 1;
+    }
+    > :nth-child(5) {
+      grid-column: span 5 / -1;
+      grid-row: 3 / span 1;
     }
     > :nth-child(7) {
       grid-column: span 5 / -1;
@@ -83,6 +78,9 @@ export default Vue.extend({
     }
     > :nth-child(1) {
       grid-column: 1 / span 5;
+    }
+    > :nth-child(2) {
+      grid-column: span 5 / -1;
     }
   }
   @media #{map-get($display-breakpoints, 'lg-only')} {

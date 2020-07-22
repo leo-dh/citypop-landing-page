@@ -23,6 +23,9 @@ export default mixins(FadeInMixin).extend({
 </script>
 <style lang="scss" scoped>
 .writeUp__title {
+  @media #{map-get($display-breakpoints, 'md-only')} {
+    font-size: 2.5em;
+  }
   @media #{map-get($display-breakpoints, 'lg-only')} {
     font-size: 3em;
   }
@@ -30,6 +33,9 @@ export default mixins(FadeInMixin).extend({
 .writeUp__message {
   font-size: 0.8em;
   white-space: pre-line;
+  @media #{map-get($display-breakpoints, 'md-only')} {
+    font-size: 0.9em;
+  }
   @media #{map-get($display-breakpoints, 'lg-only')} {
     font-size: 1.1em;
   }

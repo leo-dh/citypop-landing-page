@@ -1,7 +1,7 @@
 <template>
-  <div class="imageCard ">
-    <div class="fade-transition fade-in">
-      <img :src="imageSrc" style="width: 100%;" />
+  <div>
+    <div class="imageCard fade-transition fade-in">
+      <img :src="imageSrc" class="imageBox" />
       <p class="text-cursive mt-2 mb-0 text-center imageCaptions">
         {{ imageCard.imageCaptions }}
       </p>
@@ -32,14 +32,24 @@ export default mixins(FadeInMixin).extend({
 
 <style lang="scss" scoped>
 .imageCard {
-  width: 100%;
-  @media #{map-get($display-breakpoints, "lg-only")} {
-    width: clamp(300px, 80%, 500px);
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   .imageCaptions {
     white-space: pre-line;
     @media #{map-get( $display-breakpoints, 'lg-only' )} {
       font-size: 1.1rem;
+    }
+  }
+  .imageBox {
+    width: 100%;
+
+    @media #{map-get($display-breakpoints, "md-only")} {
+      width: clamp(200px, 80%, 300px);
+    }
+    @media #{map-get($display-breakpoints, "lg-and-up")} {
+      width: clamp(300px, 80%, 500px);
     }
   }
 }

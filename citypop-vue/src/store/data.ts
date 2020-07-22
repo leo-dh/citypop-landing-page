@@ -12,7 +12,7 @@ export const chunk2: WriteUp = {
   message:
     "Though the golden age of city pop has long passed, the genre is slowly finding its relevance in the 21st century through other offshoot genres like vaporwave and futurefunk. " +
     "\n \n" +
-    "One prime example is Plastic Love by Mariya Takeuchi. The 1984 song was favoured by Youtube’s recommendation algorithm, giving it the attention it never had when it was first released."
+    "One prime example is Plastic Love by Mariya Takeuchi. The song, released in 1984, was favoured by Youtube’s recommendation algorithm, giving it the attention it never had when it was first released."
 };
 
 export const chunk3: WriteUp = {

@@ -36,16 +36,11 @@ export default Vue.extend({
 img {
   opacity: 0.65;
   transition: opacity 0.3s ease-in-out;
-  &.on-hover {
-    opacity: 1;
-    cursor: pointer;
-  }
+
   &[lazy="loaded"] {
-    opacity: 0;
     animation-name: fadein;
     animation-duration: 1s;
     animation-iteration-count: 1;
-    animation-fill-mode: forwards;
     animation-direction: normal;
     animation-timing-function: ease-out;
     @keyframes fadein {
@@ -55,6 +50,10 @@ img {
       100% {
         opacity: 0.65;
       }
+    }
+    &.on-hover {
+      opacity: 1;
+      cursor: pointer;
     }
   }
 }

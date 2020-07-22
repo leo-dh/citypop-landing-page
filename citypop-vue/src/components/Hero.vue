@@ -70,6 +70,9 @@ export default Vue.extend({
       text-align: center;
       font-weight: bold;
       margin-bottom: 0.6em;
+      @media #{map-get($display-breakpoints, 'md-only')} {
+        font-size: 5em;
+      }
       @media #{map-get($display-breakpoints, 'lg-only')} {
         font-size: 6em;
       }
@@ -80,6 +83,9 @@ export default Vue.extend({
       &__text {
         font-size: 1em;
         text-transform: none;
+        @media #{map-get($display-breakpoints, 'md-only')} {
+          font-size: 1.6em;
+        }
         @media #{map-get($display-breakpoints, 'lg-only')} {
           font-size: 2em;
         }

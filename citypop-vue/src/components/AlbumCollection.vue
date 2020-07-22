@@ -27,6 +27,9 @@ export default mixins(FadeInMixin).extend({
 
 <style lang="scss" scoped>
 .albumCollection__header {
+  @media #{map-get($display-breakpoints, 'md-only')} {
+    font-size: 2.5em;
+  }
   @media #{map-get($display-breakpoints, 'lg-only')} {
     font-size: 3em;
   }
