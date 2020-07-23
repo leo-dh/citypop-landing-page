@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="introText">
     <h1 class="mb-6 mb-lg-8 introText__header">What is City pop?</h1>
     <p class="introText__para">
       City pop (シティーポップ) is a genre of music popular in Japan in the late 70s and 80s that
@@ -31,27 +31,44 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.introText__header {
-  @media #{map-get($display-breakpoints, 'md-only')} {
-    font-size: 2.5em;
+.introText {
+  @media #{map-get($display-breakpoints, 'sm-only')} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  @media #{map-get($display-breakpoints, 'lg-only')} {
-    font-size: 3em;
+  .introText__header {
+    @media #{map-get($display-breakpoints, 'sm-only')} {
+      font-size: 2.4em;
+      text-align: center;
+    }
+    @media #{map-get($display-breakpoints, 'md-only')} {
+      font-size: 2.5em;
+    }
+    @media #{map-get($display-breakpoints, 'lg-only')} {
+      font-size: 3em;
+    }
   }
-}
-.introText__para {
-  @media #{map-get($display-breakpoints, 'md-only')} {
-    font-size: 0.9em;
-    width: 80%;
+  .introText__para {
+    @media #{map-get($display-breakpoints, 'sm-only')} {
+      font-size: 0.9em;
+      text-align: center;
+      width: 80%;
+    }
+    @media #{map-get($display-breakpoints, 'md-only')} {
+      font-size: 0.9em;
+      width: 80%;
+    }
+    @media #{map-get($display-breakpoints, 'lg-only')} {
+      font-size: 1.1em;
+      width: 80%;
+    }
   }
-  @media #{map-get($display-breakpoints, 'lg-only')} {
-    font-size: 1.1em;
-    width: 80%;
-  }
-}
-.introText__btntext {
-  @media #{map-get($display-breakpoints, 'lg-only')} {
-    font-size: 1.1em;
+  .introText__btntext {
+    @media #{map-get($display-breakpoints, 'lg-only')} {
+      font-size: 1.1em;
+    }
   }
 }
 </style>

@@ -36,9 +36,7 @@ export default Vue.extend({
   methods: {
     scrollToView() {
       const el: Element = document.getElementsByClassName("scrollTo")[0];
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     }
   }
 });
@@ -70,6 +68,9 @@ export default Vue.extend({
       text-align: center;
       font-weight: bold;
       margin-bottom: 0.6em;
+      @media #{map-get($display-breakpoints, 'sm-only')} {
+        font-size: 4em;
+      }
       @media #{map-get($display-breakpoints, 'md-only')} {
         font-size: 5em;
       }
@@ -83,6 +84,9 @@ export default Vue.extend({
       &__text {
         font-size: 1em;
         text-transform: none;
+        @media #{map-get($display-breakpoints, 'sm-only')} {
+          font-size: 1.4em;
+        }
         @media #{map-get($display-breakpoints, 'md-only')} {
           font-size: 1.6em;
         }

@@ -44,12 +44,11 @@ export default mixins(FadeInMixin).extend({
   }
   .imageBox {
     width: 100%;
-
     @media #{map-get($display-breakpoints, "md-only")} {
-      width: clamp(200px, 80%, 300px);
+      width: 80%;
     }
     @media #{map-get($display-breakpoints, "lg-and-up")} {
-      width: clamp(300px, 80%, 500px);
+      width: 80%;
     }
   }
 }

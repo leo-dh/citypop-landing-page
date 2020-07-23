@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1 class="pb-10 text-lg-center text-md-center albumCollection__header fade-transition fade-in">
+    <h1
+      class="pb-10 text-sm-center text-lg-center text-md-center albumCollection__header fade-transition fade-in"
+    >
       Popular Albums
     </h1>
     <album-grid :albums="albums" />
@@ -27,6 +29,9 @@ export default mixins(FadeInMixin).extend({
 
 <style lang="scss" scoped>
 .albumCollection__header {
+  @media #{map-get($display-breakpoints, 'sm-only')} {
+    font-size: 2.4em;
+  }
   @media #{map-get($display-breakpoints, 'md-only')} {
     font-size: 2.5em;
   }

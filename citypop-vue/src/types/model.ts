@@ -9,3 +9,8 @@ export interface ImageCard {
 export interface Album {
   imagePath: string;
 }
+export interface Section {
+  id: string;
+  writeUp: WriteUp;
+  imageCard: ImageCard;
+}

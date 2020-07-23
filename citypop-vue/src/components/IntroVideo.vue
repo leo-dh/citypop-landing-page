@@ -28,6 +28,7 @@ export default Vue.extend({
   },
   watch: {
     "$store.state.videoPlaying": {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       handler: function(newValue: boolean, oldValue: boolean): void {
         if (newValue) {
           this.$refs.youtube.player.playVideo();

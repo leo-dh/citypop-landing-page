@@ -21,6 +21,7 @@ export default Vue.extend({
   },
   watch: {
     "$vuetify.breakpoint.mobile": {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       handler: function(newValue: boolean, oldValue: boolean): void {
         if (!newValue) {
           this.$store.state.drawer = false;

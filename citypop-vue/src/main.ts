@@ -7,7 +7,15 @@ import VueYoutube from "vue-youtube";
 import VueLazyLoad from "vue-lazyload";
 
 Vue.use(VueYoutube);
-Vue.use(VueLazyLoad, {});
+Vue.use(VueLazyLoad, {
+  observer: true,
+
+  // optional
+  observerOptions: {
+    rootMargin: "0px",
+    threshold: 0.1
+  }
+});
 
 Vue.config.productionTip = false;
 
