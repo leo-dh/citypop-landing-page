@@ -10,7 +10,7 @@
         v-for="route in routes"
         :key="route.path"
         :to="route.path"
-        class="navbar__buttons mx-lg-2 mx-md-1"
+        class="navbar__buttons mx-lg-2 mx-md-1 "
         :exact="route.path === '/'"
         text
       >

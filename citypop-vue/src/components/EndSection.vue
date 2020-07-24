@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="endsection overflow-hidden">
+    <div class="endsection overflow-hidden maroon">
       <div class="grid-layout ">
         <div class="endsection__content">
           <h1
@@ -42,7 +42,6 @@ export default mixins(FadeInMixin).extend({
 .endsection {
   height: 100vh;
   width: 100vw;
-  background: $background-dark;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="grid-layout">
-      <div class="hero ">
+      <div class="hero maroon">
         <div class="hero__content">
           <h1 class="hero__content__title ">
             Discover <br :v-if="$vuetify.breakpoint.lgAndUp" />
@@ -45,7 +45,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .hero {
   height: 90vh;
-  background: $background-dark;
   display: flex;
   align-items: center;
   justify-content: center;

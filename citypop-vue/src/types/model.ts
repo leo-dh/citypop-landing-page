@@ -7,10 +7,18 @@ export interface ImageCard {
   imageCaptions?: string;
 }
 export interface Album {
+  title?: string;
+  artist?: string;
+  songs?: Song[];
+  cover: any;
   imagePath: string;
 }
+export interface Song {
+  title: string;
+  duration: string;
+  titleTrack: boolean;
+}
 export interface Section {
-  id: string;
   writeUp: WriteUp;
   imageCard: ImageCard;
 }

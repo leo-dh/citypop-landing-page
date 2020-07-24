@@ -1,39 +1,40 @@
 <template>
   <v-hover v-slot:default="{ hover }">
     <img
-      v-lazy="imageSrc"
+      v-lazy="album.cover"
       :class="{ 'on-hover': hover }"
-      style="width: 100%;"
+      class="albumImage"
       @click="doSomething"
     />
   </v-hover>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue, { PropType } from "vue";
+import { Album } from "@/types/model";
 export default Vue.extend({
   name: "AlbumCard",
   props: {
-    src: {
-      type: String,
+    album: {
+      type: Object as PropType<Album>,
       required: true
     }
   },
   data() {
-    return {
-      imageSrc: require(`@/assets/${this.src}`)
-    };
+    return {};
   },
   methods: {
     doSomething(): void {
-      console.log("HELLO");
+      this.$store.state.albumModal = true;
+      this.$store.state.selectedAlbum = this.album;
     }
   }
 });
 </script>
 
 <style lang="scss" scoped>
-img {
+.albumImage {
+  width: 100%;
   opacity: 0.65;
   transition: opacity 0.3s ease-in-out;
 

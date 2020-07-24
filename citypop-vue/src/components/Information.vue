@@ -3,14 +3,14 @@
     <div class="grid-layout info-layout">
       <intro-text class="xs-span-all sm-span-all mb-10 mb-lg-16 " />
       <intro-video class="xs-span-all sm-span-all mb-12 mb-sm-14 mb-lg-16" />
-      <template v-for="section in sections">
+      <template v-for="(section, i) in sections">
         <write-up
-          :key="section.id"
+          :key="i"
           :write-up="section.writeUp"
           class="xs-span-all sm-span-all mb-6 mb-sm-10"
         />
         <image-card
-          :key="section.id"
+          :key="i + sections.length"
           :image-card="section.imageCard"
           class="xs-col2-center sm-col2-center mb-10 mb-sm-16 mb-md-6"
         />

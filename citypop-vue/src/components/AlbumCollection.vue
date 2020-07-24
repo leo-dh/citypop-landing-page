@@ -6,18 +6,21 @@
       Popular Albums
     </h1>
     <album-grid :albums="albums" />
+    <album-modal />
   </div>
 </template>
 
 <script lang="ts">
 import AlbumGrid from "@/components/AlbumGrid.vue";
+import AlbumModal from "@/components/AlbumModal.vue";
 import { albums } from "@/store/data";
 import mixins from "vue-typed-mixins";
 import FadeInMixin from "@/mixins/FadeInMixin";
 export default mixins(FadeInMixin).extend({
   name: "AlbumCollection",
   components: {
-    AlbumGrid
+    AlbumGrid,
+    AlbumModal
   },
   data() {
     return {

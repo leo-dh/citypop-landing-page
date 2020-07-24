@@ -1,7 +1,7 @@
 <template>
   <div class="albumGrid">
-    <template v-for="album in albums">
-      <album-card :key="album.imagePath" :src="album.imagePath" />
+    <template v-for="(album, i) in albums">
+      <album-card :key="i" :album="album" />
     </template>
   </div>
 </template>

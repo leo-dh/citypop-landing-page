@@ -42,28 +42,84 @@ export const imageCard3: ImageCard = {
 };
 
 export const sections: Section[] = [
-  { id: "1", writeUp: writeUp1, imageCard: imageCard1 },
-  { id: "2", writeUp: writeUp2, imageCard: imageCard2 },
-  { id: "3", writeUp: writeUp3, imageCard: imageCard3 }
+  { writeUp: writeUp1, imageCard: imageCard1 },
+  { writeUp: writeUp2, imageCard: imageCard2 },
+  { writeUp: writeUp3, imageCard: imageCard3 }
 ];
 
 export const albums: Album[] = [
-  { imagePath: "albumcovers/170355-dosii.jpg" },
-  { imagePath: "albumcovers/90yonge st - Kona (Feat. Jennifer Choi).jpg" },
-  { imagePath: "albumcovers/Anri-HeavensBeach.jpg" },
-  { imagePath: "albumcovers/BigWaveAlbumCover.jpg" },
-  { imagePath: "albumcovers/ForYouTatsuroYamashita.jpg" },
-  { imagePath: "albumcovers/KikuchiMomokoAdventureAlbumCover.jpg" },
-  { imagePath: "albumcovers/LabyrinthMondoGrosso.jpg" },
-  { imagePath: "albumcovers/LoveTripTakakoMamiya.jpg" },
-  { imagePath: "albumcovers/MariyaTakeuchiPlasticLoveVinylCover.jpg" },
-  { imagePath: "albumcovers/Piper-SummerBreeze.jpg" },
-  { imagePath: "albumcovers/Rideontime_tatsyamashita.jpg" },
-  { imagePath: "albumcovers/The-Solutions-Mood-For-Love.jpg" },
-  { imagePath: "albumcovers/Yubin_solo_debut_album_cover.jpg" },
-  { imagePath: "albumcovers/Yukika_Cherries_Jubiles_album_cover.jpg" },
-  { imagePath: "albumcovers/givemethelight-uju.jpg" },
-  { imagePath: "albumcovers/muzie-new-wave-city.jpg" },
-  { imagePath: "albumcovers/neon-yukika.jpg" },
-  { imagePath: "albumcovers/nightinseoul-uju.jpg" }
+  {
+    artist: "dosii",
+    title: "dosii",
+    cover: require("@/assets/albumcovers/170355-dosii.jpg"),
+    imagePath: "albumcovers/170355-dosii.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/90yonge st - Kona (Feat. Jennifer Choi).jpg"),
+    imagePath: "albumcovers/90yonge st - Kona (Feat. Jennifer Choi).jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/Anri-HeavensBeach.jpg"),
+    imagePath: "albumcovers/Anri-HeavensBeach.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/BigWaveAlbumCover.jpg"),
+    imagePath: "albumcovers/BigWaveAlbumCover.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/ForYouTatsuroYamashita.jpg"),
+    imagePath: "albumcovers/ForYouTatsuroYamashita.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/KikuchiMomokoAdventureAlbumCover.jpg"),
+    imagePath: "albumcovers/KikuchiMomokoAdventureAlbumCover.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/LabyrinthMondoGrosso.jpg"),
+    imagePath: "albumcovers/LabyrinthMondoGrosso.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/LoveTripTakakoMamiya.jpg"),
+    imagePath: "albumcovers/LoveTripTakakoMamiya.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/MariyaTakeuchiPlasticLoveVinylCover.jpg"),
+    imagePath: "albumcovers/MariyaTakeuchiPlasticLoveVinylCover.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/Piper-SummerBreeze.jpg"),
+    imagePath: "albumcovers/Piper-SummerBreeze.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/Rideontime_tatsyamashita.jpg"),
+    imagePath: "albumcovers/Rideontime_tatsyamashita.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/The-Solutions-Mood-For-Love.jpg"),
+    imagePath: "albumcovers/The-Solutions-Mood-For-Love.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/Yubin_solo_debut_album_cover.jpg"),
+    imagePath: "albumcovers/Yubin_solo_debut_album_cover.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/Yukika_Cherries_Jubiles_album_cover.jpg"),
+    imagePath: "albumcovers/Yukika_Cherries_Jubiles_album_cover.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/givemethelight-uju.jpg"),
+    imagePath: "albumcovers/givemethelight-uju.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/muzie-new-wave-city.jpg"),
+    imagePath: "albumcovers/muzie-new-wave-city.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/neon-yukika.jpg"),
+    imagePath: "albumcovers/neon-yukika.jpg"
+  },
+  {
+    cover: require("@/assets/albumcovers/nightinseoul-uju.jpg"),
+    imagePath: "albumcovers/nightinseoul-uju.jpg"
+  }
 ];

@@ -6,7 +6,14 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     drawer: false,
-    videoPlaying: false
+    videoPlaying: false,
+    albumModal: false,
+    selectedAlbum: {
+      title: "",
+      artist: "",
+      songs: [],
+      cover: ""
+    }
   },
   getters: {
     drawer: state => {
