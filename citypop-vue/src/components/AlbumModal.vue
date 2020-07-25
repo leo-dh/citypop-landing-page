@@ -17,7 +17,7 @@
               <div
                 v-for="(track, j) in $store.state.selectedAlbum.tracks"
                 :key="j"
-                class="albumModal__content__tracks__details"
+                class="albumModal__content__tracks__details font-weight-bold"
               >
                 <p>{{ track.title }}</p>
                 <p>{{ track.duration }}</p>
@@ -139,7 +139,7 @@ export default Vue.extend({
       height: 300px;
       border: 4px solid $color-orange;
       border-radius: 15px;
-      margin-right: 60px;
+      margin-right: 90px;
     }
     &__tracks {
       height: 180px;
