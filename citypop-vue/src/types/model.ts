@@ -9,11 +9,10 @@ export interface ImageCard {
 export interface Album {
   title?: string;
   artist?: string;
-  songs?: Song[];
+  tracks?: Track[];
   cover: any;
-  imagePath: string;
 }
-export interface Song {
+export interface Track {
   title: string;
   duration: string;
   titleTrack: boolean;

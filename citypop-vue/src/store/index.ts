@@ -11,7 +11,7 @@ export default new Vuex.Store({
     selectedAlbum: {
       title: "",
       artist: "",
-      songs: [],
+      tracks: [],
       cover: ""
     }
   },

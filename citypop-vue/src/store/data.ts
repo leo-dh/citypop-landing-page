@@ -52,74 +52,68 @@ export const albums: Album[] = [
     artist: "dosii",
     title: "dosii",
     cover: require("@/assets/albumcovers/170355-dosii.jpg"),
-    imagePath: "albumcovers/170355-dosii.jpg"
+    tracks: [
+      { title: "Yeowool", duration: "4:25", titleTrack: false },
+      { title: "Moon", duration: "2:22", titleTrack: false },
+      { title: "Even so", duration: "2:44", titleTrack: false },
+      { title: "starstarstar", duration: "3:38", titleTrack: false },
+      { title: "Goyeol", duration: "4:27", titleTrack: false },
+      { title: "lovememore.", duration: "3:52", titleTrack: true },
+      { title: "Orbit of yours", duration: "3:54", titleTrack: false },
+      { title: "Half Clear", duration: "4:26", titleTrack: false },
+      { title: "Jogeum", duration: "3:37", titleTrack: false },
+      { title: "To you", duration: "3:03", titleTrack: false }
+    ]
   },
   {
-    cover: require("@/assets/albumcovers/90yonge st - Kona (Feat. Jennifer Choi).jpg"),
-    imagePath: "albumcovers/90yonge st - Kona (Feat. Jennifer Choi).jpg"
+    cover: require("@/assets/albumcovers/90yonge st - Kona (Feat. Jennifer Choi).jpg")
   },
   {
-    cover: require("@/assets/albumcovers/Anri-HeavensBeach.jpg"),
-    imagePath: "albumcovers/Anri-HeavensBeach.jpg"
+    cover: require("@/assets/albumcovers/Anri-HeavensBeach.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/BigWaveAlbumCover.jpg"),
-    imagePath: "albumcovers/BigWaveAlbumCover.jpg"
+    cover: require("@/assets/albumcovers/BigWaveAlbumCover.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/ForYouTatsuroYamashita.jpg"),
-    imagePath: "albumcovers/ForYouTatsuroYamashita.jpg"
+    cover: require("@/assets/albumcovers/ForYouTatsuroYamashita.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/KikuchiMomokoAdventureAlbumCover.jpg"),
-    imagePath: "albumcovers/KikuchiMomokoAdventureAlbumCover.jpg"
+    cover: require("@/assets/albumcovers/KikuchiMomokoAdventureAlbumCover.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/LabyrinthMondoGrosso.jpg"),
-    imagePath: "albumcovers/LabyrinthMondoGrosso.jpg"
+    cover: require("@/assets/albumcovers/LabyrinthMondoGrosso.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/LoveTripTakakoMamiya.jpg"),
-    imagePath: "albumcovers/LoveTripTakakoMamiya.jpg"
+    cover: require("@/assets/albumcovers/LoveTripTakakoMamiya.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/MariyaTakeuchiPlasticLoveVinylCover.jpg"),
-    imagePath: "albumcovers/MariyaTakeuchiPlasticLoveVinylCover.jpg"
+    cover: require("@/assets/albumcovers/MariyaTakeuchiPlasticLoveVinylCover.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/Piper-SummerBreeze.jpg"),
-    imagePath: "albumcovers/Piper-SummerBreeze.jpg"
+    cover: require("@/assets/albumcovers/Piper-SummerBreeze.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/Rideontime_tatsyamashita.jpg"),
-    imagePath: "albumcovers/Rideontime_tatsyamashita.jpg"
+    cover: require("@/assets/albumcovers/Rideontime_tatsyamashita.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/The-Solutions-Mood-For-Love.jpg"),
-    imagePath: "albumcovers/The-Solutions-Mood-For-Love.jpg"
+    cover: require("@/assets/albumcovers/The-Solutions-Mood-For-Love.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/Yubin_solo_debut_album_cover.jpg"),
-    imagePath: "albumcovers/Yubin_solo_debut_album_cover.jpg"
+    cover: require("@/assets/albumcovers/Yubin_solo_debut_album_cover.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/Yukika_Cherries_Jubiles_album_cover.jpg"),
-    imagePath: "albumcovers/Yukika_Cherries_Jubiles_album_cover.jpg"
+    cover: require("@/assets/albumcovers/Yukika_Cherries_Jubiles_album_cover.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/givemethelight-uju.jpg"),
-    imagePath: "albumcovers/givemethelight-uju.jpg"
+    cover: require("@/assets/albumcovers/givemethelight-uju.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/muzie-new-wave-city.jpg"),
-    imagePath: "albumcovers/muzie-new-wave-city.jpg"
+    cover: require("@/assets/albumcovers/muzie-new-wave-city.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/neon-yukika.jpg"),
-    imagePath: "albumcovers/neon-yukika.jpg"
+    cover: require("@/assets/albumcovers/neon-yukika.jpg")
   },
   {
-    cover: require("@/assets/albumcovers/nightinseoul-uju.jpg"),
-    imagePath: "albumcovers/nightinseoul-uju.jpg"
+    cover: require("@/assets/albumcovers/nightinseoul-uju.jpg")
   }
 ];
