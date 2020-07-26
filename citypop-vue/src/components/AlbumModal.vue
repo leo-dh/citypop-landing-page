@@ -3,7 +3,7 @@
     <v-card class="maroon">
       <div class="albumModal__content">
         <img :src="$store.state.selectedAlbum.cover" alt="" class="albumModal__content__image " />
-        <div style="height: 300px">
+        <div style="height: 300px, left: 20px;">
           <div class="albumModal__content__details mb-9">
             <h1 class="albumModal__content__details__title">
               {{ $store.state.selectedAlbum.title }}
@@ -15,11 +15,27 @@
           <div class="albumModal__content__tracks">
             <vue-custom-scrollbar class="scroll-area" :settings="scrollBarOptions">
               <div
-                v-for="(track, j) in $store.state.selectedAlbum.tracks"
-                :key="j"
+                v-for="(track, i) in $store.state.selectedAlbum.tracks"
+                :key="i"
                 class="albumModal__content__tracks__details font-weight-bold"
               >
-                <p>{{ track.title }}</p>
+                <div class="albumModal__content__tracks__details__title">
+                  <v-tooltip left>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-icon
+                        :class="{ visibilityHidden: !track.titleTrack }"
+                        small
+                        class="mb-4 mr-2"
+                        color="peach"
+                        v-bind="attrs"
+                        v-on="on"
+                        >mdi-star-circle</v-icon
+                      ></template
+                    >
+                    <span>Title Track</span>
+                  </v-tooltip>
+                  <p>{{ track.title }}</p>
+                </div>
                 <p>{{ track.duration }}</p>
               </div>
             </vue-custom-scrollbar>
@@ -125,6 +141,7 @@ export default Vue.extend({
     padding: 80px 80px 48px;
     align-items: center;
     &__details {
+      padding-left: 24px;
       &__title {
         font-size: 3em;
         line-height: 1.25em;
@@ -148,8 +165,14 @@ export default Vue.extend({
         padding-right: 2em;
         display: flex;
         justify-content: space-between;
+        &__title {
+          display: flex;
+        }
       }
     }
   }
+}
+.visibilityHidden {
+  visibility: hidden;
 }
 </style>
