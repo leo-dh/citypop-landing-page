@@ -1,10 +1,15 @@
 <template>
-  <v-dialog v-model="$store.state.albumModal" width="unset" content-class="albumModal ">
-    <v-card class="maroon">
+  <v-dialog
+    v-model="$store.state.albumModal"
+    width="unset"
+    content-class="albumModal"
+    :fullscreen="$vuetify.breakpoint.smAndDown"
+  >
+    <v-card class="maroon albumModal__vcard">
       <div class="albumModal__content">
         <img :src="$store.state.selectedAlbum.cover" alt="" class="albumModal__content__image " />
         <div style="height: 300px, left: 20px;">
-          <div class="albumModal__content__details mb-9">
+          <div class="albumModal__content__details mb-lg-9 mb-md-9 mb-8">
             <h1 class="albumModal__content__details__title">
               {{ $store.state.selectedAlbum.title }}
             </h1>
@@ -12,7 +17,7 @@
               {{ $store.state.selectedAlbum.artist }}
             </h5>
           </div>
-          <div class="albumModal__content__tracks">
+          <div class="albumModal__content__tracks" :style="{ height: containerHeight + 'px' }">
             <vue-custom-scrollbar class="scroll-area" :settings="scrollBarOptions">
               <div
                 v-for="(track, i) in $store.state.selectedAlbum.tracks"
@@ -39,23 +44,6 @@
                 <p>{{ track.duration }}</p>
               </div>
             </vue-custom-scrollbar>
-            <!-- <v-carousel hide-delimiter-background :show-arrows="false" height="250">
-              <v-carousel-item
-                v-for="(trackSplit, i) in trackSplits"
-                :key="i"
-                reverse-transition="fade-transition"
-                transition="fade-transition"
-              >
-                <div
-                  v-for="(track, j) in trackSplit"
-                  :key="j"
-                  class="albumModal__content__tracks__details"
-                >
-                  <p>{{ track.title }}</p>
-                  <p>{{ track.duration }}</p>
-                </div>
-              </v-carousel-item>
-            </v-carousel> -->
           </div>
         </div>
       </div>
@@ -76,7 +64,7 @@
 <script lang="ts">
 import Vue from "vue";
 import vueCustomScrollbar from "vue-custom-scrollbar";
-import { Track } from "@/types/model";
+import { Album } from "@/types/model";
 
 export default Vue.extend({
   name: "AlbumModal",
@@ -88,67 +76,82 @@ export default Vue.extend({
       scrollBarOptions: {
         suppressScrollX: true,
         minScrollbarLength: 60
-      }
+      },
+      containerHeight: 180
     };
   },
-  computed: {
-    trackSplits() {
-      const tracks = this.$store.state.selectedAlbum.tracks;
-      const chunk = 5;
-      let splits: Track[] = [];
-      for (let i = 0; i < tracks.length; i += chunk) {
-        splits = [...splits, tracks.splice(i, i + chunk)];
+  watch: {
+    "$store.state.selectedAlbum": {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      handler: function(newValue: Album, oldValue: Album): void {
+        this.setContainerHeight();
       }
-      return splits;
+    }
+  },
+  created() {
+    addEventListener("resize", this.setContainerHeight);
+  },
+  destroyed() {
+    removeEventListener("resize", this.setContainerHeight);
+  },
+  methods: {
+    setContainerHeight(): void {
+      let result: number;
+      if (this.$vuetify.breakpoint.smOnly) {
+        const minHeight = this.$store.state.selectedAlbum.tracks.length * 40;
+        const calcHeight = window.innerHeight - 48 - 300 - 40 - 72 - 32 - 52;
+        result = Math.min(minHeight, calcHeight);
+      } else if (this.$vuetify.breakpoint.xsOnly) {
+        const minHeight = this.$store.state.selectedAlbum.tracks.length * 40;
+        const calcHeight = window.innerHeight - 48 - 250 - 28 - 72 - 32 - 52;
+        result = Math.min(minHeight, calcHeight);
+      } else {
+        result = 180;
+      }
+      this.containerHeight = result;
     }
   }
 });
 </script>
 
 <style lang="scss">
-.scroll-area {
-  position: relative;
-  margin: auto;
-  width: auto;
-  overflow-x: hidden;
-  height: 100%;
-}
-.ps .ps__rail-y:hover,
-.ps .ps__rail-y:focus,
-.ps .ps__rail-y.ps--clicking {
-  opacity: 0.9;
-  background-color: transparent;
-}
-.ps__thumb-y {
-  opacity: 0.3;
-  transition: background-color 0.2s linear, width 0.2s ease-in-out, opacity 0.2s linear;
-}
-.ps__rail-y:hover > .ps__thumb-y,
-.ps__rail-y:focus > .ps__thumb-y,
-.ps__rail-y.ps--clicking .ps__thumb-y {
-  background-color: $color-orange;
-  opacity: 1;
-}
-
-.ps__rail-y {
-  opacity: 0.6;
-}
-
 .albumModal {
   border-radius: 15px !important;
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__vcard {
+    display: flex !important;
+    flex-direction: column;
+  }
   &__content {
     display: flex;
     padding: 80px 80px 48px;
     align-items: center;
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
+      flex-direction: column;
+      padding: 48px 80px 0px;
+      flex: 1 1 0%;
+      justify-content: center;
+    }
     &__details {
       padding-left: 24px;
       &__title {
         font-size: 3em;
         line-height: 1.25em;
+        @media #{map-get($display-breakpoints, 'sm-and-down')} {
+          font-size: 2.5em;
+        }
       }
       &__artist {
         font-size: 1.25em;
         line-height: 1.2em;
+        @media #{map-get($display-breakpoints, 'sm-and-down')} {
+          font-size: 1.1em;
+        }
       }
     }
     &__image {
@@ -157,14 +160,53 @@ export default Vue.extend({
       border: 4px solid $color-orange;
       border-radius: 15px;
       margin-right: 90px;
+      @media #{map-get($display-breakpoints, 'sm-and-down')} {
+        margin-right: 0px;
+        margin-bottom: 40px;
+      }
+      @media #{map-get($display-breakpoints, 'xs-only')} {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 28px;
+      }
     }
     &__tracks {
-      height: 180px;
+      // height: 180px;
+      .scroll-area {
+        position: relative;
+        margin: auto;
+        width: auto;
+        overflow-x: hidden;
+        height: 100%;
+      }
+      .ps .ps__rail-y:hover,
+      .ps .ps__rail-y:focus,
+      .ps .ps__rail-y.ps--clicking {
+        opacity: 0.9;
+        background-color: transparent;
+      }
+      .ps__thumb-y {
+        opacity: 0.3;
+        transition: background-color 0.2s linear, width 0.2s ease-in-out, opacity 0.2s linear;
+      }
+      .ps__rail-y:hover > .ps__thumb-y,
+      .ps__rail-y:focus > .ps__thumb-y,
+      .ps__rail-y.ps--clicking .ps__thumb-y {
+        background-color: $color-orange;
+        opacity: 1;
+      }
+
+      .ps__rail-y {
+        opacity: 0.6;
+      }
       &__details {
-        min-width: 300px;
+        width: 300px;
         padding-right: 2em;
         display: flex;
         justify-content: space-between;
+        @media #{map-get($display-breakpoints, 'xs-only')} {
+          width: 250px;
+        }
         &__title {
           display: flex;
         }
