@@ -1,17 +1,25 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <hello-world />
+  <div>
+    <div class="center">
+      <h1 style="font-size: 3em">
+        Coming Soon
+      </h1>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "@/components/HelloWorld.vue";
 export default Vue.extend({
-  name: "About",
-  components: {
-    HelloWorld
-  }
+  name: "Resources"
 });
 </script>
+
+<style lang="scss" scoped>
+.center {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+}
+</style>
