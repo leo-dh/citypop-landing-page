@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1
-      class="pb-10 text-sm-center text-lg-center text-md-center albumCollection__header fade-transition fade-in"
+      class="pb-10 text-sm-center text-md-center text-lg-center text-xl-center albumCollection__header fade-transition fade-in"
     >
       Popular Albums
     </h1>
@@ -26,6 +26,9 @@ export default mixins(FadeInMixin).extend({
     return {
       albums: albums
     };
+  },
+  mounted() {
+    this.$store.state.selectedAlbum = albums[0];
   }
 });
 </script>
@@ -38,7 +41,7 @@ export default mixins(FadeInMixin).extend({
   @media #{map-get($display-breakpoints, 'md-only')} {
     font-size: 2.5em;
   }
-  @media #{map-get($display-breakpoints, 'lg-only')} {
+  @media #{map-get($display-breakpoints, 'lg-and-up')} {
     font-size: 3em;
   }
 }

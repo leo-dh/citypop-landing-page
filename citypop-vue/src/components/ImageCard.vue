@@ -38,7 +38,7 @@ export default mixins(FadeInMixin).extend({
   flex-direction: column;
   .imageCaptions {
     white-space: pre-line;
-    @media #{map-get( $display-breakpoints, 'lg-only' )} {
+    @media #{map-get( $display-breakpoints, 'lg-and-up' )} {
       font-size: 1.1rem;
     }
   }

@@ -1,6 +1,8 @@
 <template>
   <div class="writeUp">
-    <h1 class="mb-6 mb-lg-10 writeUp__title fade-transition fade-in">{{ writeUp.title }}</h1>
+    <h1 class="mb-6 mb-lg-10 mb-xl-10 writeUp__title fade-transition fade-in">
+      {{ writeUp.title }}
+    </h1>
     <!-- eslint-disable-next-line vue/no-v-html -->
     <p class="writeUp__message fade-transition fade-in" v-html="writeUp.message"></p>
   </div>
@@ -37,7 +39,7 @@ export default mixins(FadeInMixin).extend({
     @media #{map-get($display-breakpoints, 'md-only')} {
       font-size: 2.5em;
     }
-    @media #{map-get($display-breakpoints, 'lg-only')} {
+    @media #{map-get($display-breakpoints, 'lg-and-up')} {
       font-size: 3em;
     }
   }
@@ -52,7 +54,7 @@ export default mixins(FadeInMixin).extend({
     @media #{map-get($display-breakpoints, 'md-only')} {
       font-size: 0.9em;
     }
-    @media #{map-get($display-breakpoints, 'lg-only')} {
+    @media #{map-get($display-breakpoints, 'lg-and-up')} {
       font-size: 1.1em;
     }
   }

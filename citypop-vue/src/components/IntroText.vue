@@ -1,6 +1,6 @@
 <template>
   <div class="introText">
-    <h1 class="mb-6 mb-lg-8 introText__header">What is City pop?</h1>
+    <h1 class="mb-6 mb-lg-8 mb-xl-8 introText__header">What is City pop?</h1>
     <p class="introText__para">
       City pop (シティーポップ) is a genre of music popular in Japan in the late 70s and 80s that
       blended pop, jazz, and funk
@@ -46,7 +46,7 @@ export default Vue.extend({
     @media #{map-get($display-breakpoints, 'md-only')} {
       font-size: 2.5em;
     }
-    @media #{map-get($display-breakpoints, 'lg-only')} {
+    @media #{map-get($display-breakpoints, 'lg-and-up')} {
       font-size: 3em;
     }
   }
@@ -60,13 +60,13 @@ export default Vue.extend({
       font-size: 0.9em;
       width: 80%;
     }
-    @media #{map-get($display-breakpoints, 'lg-only')} {
+    @media #{map-get($display-breakpoints, 'lg-and-up')} {
       font-size: 1.1em;
       width: 80%;
     }
   }
   .introText__btntext {
-    @media #{map-get($display-breakpoints, 'lg-only')} {
+    @media #{map-get($display-breakpoints, 'lg-and-up')} {
       font-size: 1.1em;
     }
   }

@@ -4,7 +4,7 @@
       <div class="grid-layout ">
         <div class="endsection__content">
           <h1
-            class="endsection__content__title mb-2 mb-sm-4 mb-md-6 mb-lg-12 fade-transition fade-in"
+            class="endsection__content__title mb-2 mb-sm-4 mb-md-6 mb-lg-12 mb-xl-12 fade-transition fade-in"
           >
             Love what you hear?
           </h1>
@@ -53,7 +53,7 @@ export default mixins(FadeInMixin).extend({
     text-overflow: inherit;
     white-space: nowrap;
     margin: 0;
-    @media #{map-get($display-breakpoints, 'lg-only')} {
+    @media #{map-get($display-breakpoints, 'lg-and-up')} {
       font-size: 8em;
     }
     &--top {
@@ -87,7 +87,7 @@ export default mixins(FadeInMixin).extend({
       @media #{map-get($display-breakpoints, 'md-only')} {
         font-size: 4em;
       }
-      @media #{map-get($display-breakpoints, 'lg-only')} {
+      @media #{map-get($display-breakpoints, 'lg-and-up')} {
         font-size: 5em;
       }
     }
@@ -102,7 +102,7 @@ export default mixins(FadeInMixin).extend({
         @media #{map-get($display-breakpoints, 'md-only')} {
           font-size: 1.3em;
         }
-        @media #{map-get($display-breakpoints, 'lg-only')} {
+        @media #{map-get($display-breakpoints, 'lg-and-up')} {
           font-size: 1.5em;
         }
       }

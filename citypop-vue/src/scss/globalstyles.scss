@@ -45,7 +45,7 @@ h6 {
     grid-template-columns: repeat(10, 70px);
     column-gap: 24px;
   }
-  @media #{map-get($display-breakpoints, 'lg-only')} {
+  @media #{map-get($display-breakpoints, 'lg-and-up')} {
     grid-template-columns: repeat(10, 80px);
     column-gap: 30px;
   }
@@ -90,7 +90,7 @@ h6 {
     grid-column: 1 / -1;
   }
 }
-@media #{map-get($display-breakpoints, 'lg-only')} {
+@media #{map-get($display-breakpoints, 'lg-and-up')} {
   .lg-span-all {
     grid-column: 1 / -1;
   }

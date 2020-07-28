@@ -9,7 +9,7 @@
       <div class="albumModal__content">
         <img :src="$store.state.selectedAlbum.cover" alt="" class="albumModal__content__image " />
         <div style="height: 300px, left: 20px;">
-          <div class="albumModal__content__details mb-lg-9 mb-md-9 mb-8">
+          <div class="albumModal__content__details mb-xl-9 mb-lg-9 mb-md-9 mb-8">
             <h1 class="albumModal__content__details__title">
               {{ $store.state.selectedAlbum.title }}
             </h1>
@@ -18,7 +18,11 @@
             </h5>
           </div>
           <div class="albumModal__content__tracks" :style="{ height: containerHeight + 'px' }">
-            <vue-custom-scrollbar class="scroll-area" :settings="scrollBarOptions">
+            <vue-custom-scrollbar
+              :key="scrollBarKey"
+              class="scroll-area"
+              :settings="scrollBarOptions"
+            >
               <div
                 v-for="(track, i) in $store.state.selectedAlbum.tracks"
                 :key="i"
@@ -75,9 +79,11 @@ export default Vue.extend({
     return {
       scrollBarOptions: {
         suppressScrollX: true,
+        suppressScrollY: false,
         minScrollbarLength: 60
       },
-      containerHeight: 180
+      containerHeight: 180,
+      scrollBarKey: 0
     };
   },
   watch: {
@@ -85,6 +91,18 @@ export default Vue.extend({
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       handler: function(newValue: Album, oldValue: Album): void {
         this.setContainerHeight();
+      }
+    },
+    "$store.state.albumModal": {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      handler: function(newValue: boolean, oldValue: boolean): void {
+        if (newValue) {
+          // Force scrollbar to rerender
+          setTimeout(() => {
+            this.scrollBarKey++;
+            console.log(this.scrollBarKey);
+          }, 500);
+        }
       }
     }
   },
@@ -97,18 +115,18 @@ export default Vue.extend({
   methods: {
     setContainerHeight(): void {
       let result: number;
+      const minHeight = this.$store.state.selectedAlbum.tracks.length * 40;
       if (this.$vuetify.breakpoint.smOnly) {
-        const minHeight = this.$store.state.selectedAlbum.tracks.length * 40;
         const calcHeight = window.innerHeight - 48 - 300 - 40 - 72 - 32 - 52;
         result = Math.min(minHeight, calcHeight);
       } else if (this.$vuetify.breakpoint.xsOnly) {
-        const minHeight = this.$store.state.selectedAlbum.tracks.length * 40;
         const calcHeight = window.innerHeight - 48 - 250 - 28 - 72 - 32 - 52;
         result = Math.min(minHeight, calcHeight);
       } else {
         result = 180;
       }
       this.containerHeight = result;
+      this.scrollBarOptions.suppressScrollY = minHeight <= result;
     }
   }
 });
@@ -139,6 +157,9 @@ export default Vue.extend({
     }
     &__details {
       padding-left: 24px;
+      @media #{map-get($display-breakpoints, 'sm-and-down')} {
+        padding-right: 24px;
+      }
       &__title {
         font-size: 3em;
         line-height: 1.25em;
@@ -171,13 +192,14 @@ export default Vue.extend({
       }
     }
     &__tracks {
-      // height: 180px;
       .scroll-area {
-        position: relative;
-        margin: auto;
-        width: auto;
+        // margin: auto;
+        width: 300px;
         overflow-x: hidden;
         height: 100%;
+        @media #{map-get($display-breakpoints, 'xs-only')} {
+          width: 250px;
+        }
       }
       .ps .ps__rail-y:hover,
       .ps .ps__rail-y:focus,
@@ -195,10 +217,10 @@ export default Vue.extend({
         background-color: $color-orange;
         opacity: 1;
       }
-
       .ps__rail-y {
         opacity: 0.6;
       }
+
       &__details {
         width: 300px;
         padding-right: 2em;

@@ -18,5 +18,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### TODO
 
 - Add imagemin-webpack-plugin
-- Add Modal
 - xl breakpoint

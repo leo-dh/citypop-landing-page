@@ -11,6 +11,7 @@ export interface Album {
   artist?: string;
   tracks?: Track[];
   cover: any;
+  comments?: Record<string, any>;
 }
 export interface Track {
   title: string;

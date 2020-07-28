@@ -1,8 +1,8 @@
 <template>
   <div class="background-wrapper scrollTo">
     <div class="grid-layout info-layout">
-      <intro-text class="xs-span-all sm-span-all mb-10 mb-lg-16 " />
-      <intro-video class="xs-span-all sm-span-all mb-12 mb-sm-14 mb-lg-16" />
+      <intro-text class="xs-span-all sm-span-all mb-10 mb-lg-16 mb-xl-16" />
+      <intro-video class="xs-span-all sm-span-all mb-12 mb-sm-14 mb-lg-16 mb-xl-16" />
       <template v-for="(section, i) in sections">
         <write-up
           :key="i"
@@ -15,7 +15,7 @@
           class="xs-col2-center sm-col2-center mb-10 mb-sm-16 mb-md-6"
         />
       </template>
-      <album-collection class="span-all mt-2 mt-lg-16" />
+      <album-collection class="span-all mt-2 mt-lg-16 mt-xl-16" />
     </div>
   </div>
 </template>
@@ -84,7 +84,7 @@ export default Vue.extend({
       grid-column: span 5 / -1;
     }
   }
-  @media #{map-get($display-breakpoints, 'lg-only')} {
+  @media #{map-get($display-breakpoints, 'lg-and-up')} {
     row-gap: 6em;
   }
 }

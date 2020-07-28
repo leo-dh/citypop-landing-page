@@ -63,28 +63,107 @@ export const albums: Album[] = [
       { title: "Half Clear", duration: "4:26", titleTrack: false },
       { title: "Jogeum", duration: "3:37", titleTrack: false },
       { title: "To you", duration: "3:03", titleTrack: false }
+    ],
+    comments: { spotifyLink: "https://open.spotify.com/album/3sa814wrHO77FkSycZwhNf" }
+  },
+  {
+    artist: "90yonge St.",
+    title: "Kona (feat. Jennifer Choi)",
+    cover: require("@/assets/albumcovers/90yonge st - Kona (Feat. Jennifer Choi).jpg"),
+    tracks: [{ title: "Kona (feat. Jennifer Choi)", duration: "3:35", titleTrack: true }],
+    comments: { spotifyLink: "https://open.spotify.com/album/2O6Q3bYc8H7mi2NkED3LA7" }
+  },
+  {
+    artist: "Anri",
+    title: "Heaven Beach",
+    cover: require("@/assets/albumcovers/Anri-HeavensBeach.jpg"),
+    tracks: [
+      { title: "二番目のaffair", duration: "4:40", titleTrack: false },
+      { title: "Last Summer Whisper", duration: "4:59", titleTrack: false },
+      { title: "Lonely Driving", duration: "3:21", titleTrack: false },
+      { title: "Resolution", duration: "4:26", titleTrack: false },
+      { title: "Fly By Day", duration: "4:33", titleTrack: false },
+      { title: "Flash Back Memories", duration: "4:07", titleTrack: false },
+      { title: "Honesty Man", duration: "4:08", titleTrack: false },
+      { title: "Memorial Story", duration: "4:04", titleTrack: false },
+      { title: "夏に背を向けて", duration: "4:22", titleTrack: false },
+      { title: "Heaven Beach", duration: "6:01", titleTrack: true },
+      { title: "風の中でloving you (2011)", duration: "4:16", titleTrack: false }
+    ],
+    comments: { spotifyLink: "https://open.spotify.com/album/74XLaVRIeHY51nuXcC5RuS" }
+  },
+  {
+    artist: "Tatsuro Yamashita",
+    title: "Big Wave",
+    cover: require("@/assets/albumcovers/BigWaveAlbumCover.jpg"),
+    tracks: [
+      { title: "The Theme From Big Wave", duration: " 3:39", titleTrack: true },
+      { title: "Jody", duration: " 3:51", titleTrack: false },
+      { title: "Only With You", duration: " 3:43", titleTrack: false },
+      { title: "Magic Ways", duration: " 4:48", titleTrack: false },
+      { title: "Your Eyes", duration: " 3:14", titleTrack: false },
+      { title: "I Love You...(Part 2)", duration: " 2:07", titleTrack: false },
+      { title: "Girls On The Beach", duration: " 2:45", titleTrack: false },
+      { title: "Please Let Me Wonder", duration: " 3:09", titleTrack: false },
+      { title: "Darlin'", duration: " 3:29", titleTrack: false },
+      { title: "Guess I'm Dumb", duration: " 3:14", titleTrack: false },
+      { title: "This Could Be The Night", duration: " 4:03", titleTrack: false },
+      { title: "I Love You...( Part 1 )", duration: " 2:04", titleTrack: false }
     ]
   },
   {
-    cover: require("@/assets/albumcovers/90yonge st - Kona (Feat. Jennifer Choi).jpg")
+    artist: "Tatsuro Yamashita",
+    title: "For You",
+    cover: require("@/assets/albumcovers/ForYouTatsuroYamashita.jpg"),
+    tracks: [
+      { title: "Sparkle", duration: "4:13", titleTrack: false },
+      { title: "Music Book", duration: "5:08", titleTrack: false },
+      { title: "Interlude A Part I", duration: "0:23", titleTrack: false },
+      { title: "Morning Glory", duration: "3:28", titleTrack: false },
+      { title: "Interlude A Part II", duration: "0:25", titleTrack: false },
+      { title: "Futari", duration: "5:46", titleTrack: false },
+      { title: "Loveland, Island", duration: "4:29", titleTrack: false },
+      { title: "Interlude B Part I", duration: "0:16", titleTrack: false },
+      { title: "Love Talkin' (Honey It's You)", duration: "5:50", titleTrack: false },
+      { title: "Hey Reporter!", duration: "5:33", titleTrack: false },
+      { title: "Interlude B Part II", duration: "0:17", titleTrack: false },
+      { title: "Your Eyes", duration: "3:14", titleTrack: false }
+    ]
   },
   {
-    cover: require("@/assets/albumcovers/Anri-HeavensBeach.jpg")
+    artist: "Kikuchi Momoko",
+    title: "Adventure",
+    cover: require("@/assets/albumcovers/KikuchiMomokoAdventureAlbumCover.jpg"),
+    tracks: [
+      { title: "Overture", duration: "2:23", titleTrack: false },
+      { title: "Adventure", duration: "4:40", titleTrack: false },
+      { title: "もう逢えないかもしれない", duration: "4:15", titleTrack: false },
+      { title: "波になりたい", duration: "4:04", titleTrack: false },
+      { title: "Night Cruising", duration: "4:58", titleTrack: false },
+      { title: "雨の Realize", duration: "4:14", titleTrack: false },
+      { title: "赤い稲妻", duration: "4:03", titleTrack: false },
+      { title: "Good Friend", duration: "4:12", titleTrack: false },
+      { title: "Mystical Composer", duration: "5:08", titleTrack: false },
+      { title: "Tomorrow", duration: "4:22", titleTrack: false }
+    ]
   },
   {
-    cover: require("@/assets/albumcovers/BigWaveAlbumCover.jpg")
+    artist: "MONDO GROSSO",
+    title: "Labyrinth",
+    cover: require("@/assets/albumcovers/LabyrinthMondoGrosso.jpg"),
+    tracks: [{ title: "ラビリンス", duration: "4:54", titleTrack: true }],
+    comments: { spotifyLink: "https://open.spotify.com/album/1pHD8AFu4z1CvuTPjZFOFi" }
   },
   {
-    cover: require("@/assets/albumcovers/ForYouTatsuroYamashita.jpg")
-  },
-  {
-    cover: require("@/assets/albumcovers/KikuchiMomokoAdventureAlbumCover.jpg")
-  },
-  {
-    cover: require("@/assets/albumcovers/LabyrinthMondoGrosso.jpg")
-  },
-  {
-    cover: require("@/assets/albumcovers/LoveTripTakakoMamiya.jpg")
+    artist: "Takako Mamiya",
+    title: "Love Trip",
+    cover: require("@/assets/albumcovers/LoveTripTakakoMamiya.jpg"),
+    tracks: [
+      { title: "Love Trip", duration: "3:49", titleTrack: true },
+      { title: "All Or Nothing", duration: "4:08", titleTrack: false },
+      { title: "One More Night", duration: "3:52", titleTrack: false },
+      { title: "What A Broken Heart Can Do", duration: "4:01", titleTrack: false }
+    ]
   },
   {
     cover: require("@/assets/albumcovers/MariyaTakeuchiPlasticLoveVinylCover.jpg")
