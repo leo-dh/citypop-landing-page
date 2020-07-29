@@ -8,16 +8,21 @@
     <v-card class="maroon albumModal__vcard">
       <div class="albumModal__content">
         <img :src="$store.state.selectedAlbum.cover" alt="" class="albumModal__content__image " />
-        <div style="height: 300px, left: 20px;">
-          <div class="albumModal__content__details mb-xl-9 mb-lg-9 mb-md-9 mb-8">
-            <h1 class="albumModal__content__details__title">
+        <div class="albumModal__content__text">
+          <div
+            class="albumModal__content__text__details mb-xl-9 mb-lg-9 mb-md-9 mb-8 text-center text-xl-left text-lg-left text-md-left"
+          >
+            <h1 class="albumModal__content__text__details__title">
               {{ $store.state.selectedAlbum.title }}
             </h1>
-            <h5 class="albumModal__content__details__artist white--text">
+            <h5 class="albumModal__content__text__details__artist white--text">
               {{ $store.state.selectedAlbum.artist }}
             </h5>
           </div>
-          <div class="albumModal__content__tracks" :style="{ height: containerHeight + 'px' }">
+          <div
+            class="albumModal__content__text__tracks"
+            :style="{ height: containerHeight + 'px' }"
+          >
             <vue-custom-scrollbar
               :key="scrollBarKey"
               class="scroll-area"
@@ -26,9 +31,10 @@
               <div
                 v-for="(track, i) in $store.state.selectedAlbum.tracks"
                 :key="i"
-                class="albumModal__content__tracks__details font-weight-bold"
+                class="albumModal__content__text__tracks__details font-weight-bold"
+                :style="{ paddingRight: scrollContainerPadding + 'px' }"
               >
-                <div class="albumModal__content__tracks__details__title">
+                <div class="albumModal__content__text__tracks__details__title">
                   <v-tooltip left>
                     <template v-slot:activator="{ on, attrs }">
                       <v-icon
@@ -83,50 +89,56 @@ export default Vue.extend({
         minScrollbarLength: 60
       },
       containerHeight: 180,
-      scrollBarKey: 0
+      scrollBarKey: 0,
+      scrollContainerPadding: 0
     };
   },
   watch: {
     "$store.state.selectedAlbum": {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       handler: function(newValue: Album, oldValue: Album): void {
-        this.setContainerHeight();
-      }
-    },
-    "$store.state.albumModal": {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      handler: function(newValue: boolean, oldValue: boolean): void {
-        if (newValue) {
-          // Force scrollbar to rerender
-          setTimeout(() => {
-            this.scrollBarKey++;
-            console.log(this.scrollBarKey);
-          }, 500);
-        }
+        this.initContainerHeight();
       }
     }
   },
   created() {
-    addEventListener("resize", this.setContainerHeight);
+    addEventListener("resize", this.initContainerHeight);
   },
   destroyed() {
-    removeEventListener("resize", this.setContainerHeight);
+    removeEventListener("resize", this.initContainerHeight);
   },
   methods: {
-    setContainerHeight(): void {
-      let result: number;
-      const minHeight = this.$store.state.selectedAlbum.tracks.length * 40;
+    initContainerHeight(): void {
+      this.setContainerHeight();
+      this.forceScrollbarRender();
+      this.adjustContainerHeight();
+    },
+    forceScrollbarRender(): void {
+      this.$nextTick(() => {
+        this.scrollBarKey++;
+      });
+    },
+    async adjustContainerHeight(): Promise<void> {
+      await this.$nextTick();
+      const el = document.getElementsByClassName("albumModal__content__text__details")[0];
+      this.setContainerHeight(el.clientHeight);
+    },
+    setContainerHeight(detailsHeight = 70): void {
+      let calcHeight = 180;
       if (this.$vuetify.breakpoint.smOnly) {
-        const calcHeight = window.innerHeight - 48 - 300 - 40 - 72 - 32 - 52;
-        result = Math.min(minHeight, calcHeight);
+        calcHeight = window.innerHeight - 48 - 300 - 40 - detailsHeight - 32 - 52;
       } else if (this.$vuetify.breakpoint.xsOnly) {
-        const calcHeight = window.innerHeight - 48 - 250 - 28 - 72 - 32 - 52;
-        result = Math.min(minHeight, calcHeight);
-      } else {
-        result = 180;
+        calcHeight = window.innerHeight - 48 - 250 - 28 - detailsHeight - 32 - 52;
       }
-      this.containerHeight = result;
-      this.scrollBarOptions.suppressScrollY = minHeight <= result;
+      const minHeight = this.$store.state.selectedAlbum.tracks.length * 40;
+      this.containerHeight = Math.min(minHeight, calcHeight);
+      if (minHeight <= calcHeight) {
+        this.scrollBarOptions.suppressScrollY = true;
+        this.scrollContainerPadding = 0;
+      } else {
+        this.scrollBarOptions.suppressScrollY = false;
+        this.scrollContainerPadding = 32;
+      }
     }
   }
 });
@@ -155,23 +167,72 @@ export default Vue.extend({
       flex: 1 1 0%;
       justify-content: center;
     }
-    &__details {
-      padding-left: 24px;
+    &__text {
+      height: 300px;
       @media #{map-get($display-breakpoints, 'sm-and-down')} {
-        padding-right: 24px;
+        height: auto;
       }
-      &__title {
-        font-size: 3em;
-        line-height: 1.25em;
+      &__details {
+        padding-left: 24px;
         @media #{map-get($display-breakpoints, 'sm-and-down')} {
-          font-size: 2.5em;
+          padding: 0;
+        }
+        &__title {
+          font-size: 3em;
+          line-height: 1.25em;
+          @media #{map-get($display-breakpoints, 'sm-and-down')} {
+            font-size: 2.5em;
+          }
+        }
+        &__artist {
+          font-size: 1.25em;
+          line-height: 1.2em;
+          @media #{map-get($display-breakpoints, 'sm-and-down')} {
+            font-size: 1em;
+          }
         }
       }
-      &__artist {
-        font-size: 1.25em;
-        line-height: 1.2em;
-        @media #{map-get($display-breakpoints, 'sm-and-down')} {
-          font-size: 1.1em;
+      &__tracks {
+        .scroll-area {
+          // margin: auto;
+          // width: 300px;
+          overflow-x: hidden;
+          height: 100%;
+          @media #{map-get($display-breakpoints, 'xs-only')} {
+            // width: 250px;
+          }
+        }
+        .ps .ps__rail-y:hover,
+        .ps .ps__rail-y:focus,
+        .ps .ps__rail-y.ps--clicking {
+          opacity: 0.9;
+          background-color: transparent;
+        }
+        .ps__thumb-y {
+          opacity: 0.3;
+          transition: background-color 0.2s linear, width 0.2s ease-in-out, opacity 0.2s linear;
+        }
+        .ps__rail-y:hover > .ps__thumb-y,
+        .ps__rail-y:focus > .ps__thumb-y,
+        .ps__rail-y.ps--clicking .ps__thumb-y {
+          background-color: $color-orange;
+          opacity: 1;
+        }
+        .ps__rail-y {
+          opacity: 0.6;
+        }
+
+        &__details {
+          min-width: 330px;
+          // padding-right: 2em;
+          display: flex;
+          justify-content: space-between;
+          @media #{map-get($display-breakpoints, 'xs-only')} {
+            min-width: 300px;
+          }
+          &__title {
+            display: flex;
+          }
         }
       }
     }
@@ -189,49 +250,6 @@ export default Vue.extend({
         width: 250px;
         height: 250px;
         margin-bottom: 28px;
-      }
-    }
-    &__tracks {
-      .scroll-area {
-        // margin: auto;
-        width: 300px;
-        overflow-x: hidden;
-        height: 100%;
-        @media #{map-get($display-breakpoints, 'xs-only')} {
-          width: 250px;
-        }
-      }
-      .ps .ps__rail-y:hover,
-      .ps .ps__rail-y:focus,
-      .ps .ps__rail-y.ps--clicking {
-        opacity: 0.9;
-        background-color: transparent;
-      }
-      .ps__thumb-y {
-        opacity: 0.3;
-        transition: background-color 0.2s linear, width 0.2s ease-in-out, opacity 0.2s linear;
-      }
-      .ps__rail-y:hover > .ps__thumb-y,
-      .ps__rail-y:focus > .ps__thumb-y,
-      .ps__rail-y.ps--clicking .ps__thumb-y {
-        background-color: $color-orange;
-        opacity: 1;
-      }
-      .ps__rail-y {
-        opacity: 0.6;
-      }
-
-      &__details {
-        width: 300px;
-        padding-right: 2em;
-        display: flex;
-        justify-content: space-between;
-        @media #{map-get($display-breakpoints, 'xs-only')} {
-          width: 250px;
-        }
-        &__title {
-          display: flex;
-        }
       }
     }
   }

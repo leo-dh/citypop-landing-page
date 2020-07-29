@@ -26,9 +26,6 @@ export default mixins(FadeInMixin).extend({
     return {
       albums: albums
     };
-  },
-  mounted() {
-    this.$store.state.selectedAlbum = albums[0];
   }
 });
 </script>
