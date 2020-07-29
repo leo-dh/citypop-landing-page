@@ -166,10 +166,39 @@ export const albums: Album[] = [
     ]
   },
   {
-    cover: require("@/assets/albumcovers/MariyaTakeuchiPlasticLoveVinylCover.jpg")
+    artist: "Mariya Takeuchi",
+    title: "Variety",
+    cover: require("@/assets/albumcovers/VarietyMariyaTakeuchi"),
+    tracks: [
+      { title: "もう一度", duration: "4:06", titleTrack: true },
+      { title: "プラスティック・ラブ", duration: "4:51", titleTrack: false },
+      { title: "本気でオンリーユー", duration: "3:53", titleTrack: false },
+      { title: "One Night Stand", duration: "3:57", titleTrack: false },
+      { title: "Broken Heart", duration: "3:55", titleTrack: false },
+      { title: "アンフィシアターの夜", duration: "3:34", titleTrack: false },
+      { title: "とどかぬ想い", duration: "3:36", titleTrack: false },
+      { title: "マージービートで唄わせて", duration: "3:19", titleTrack: false },
+      { title: "水とあなたと太陽と", duration: "3:30", titleTrack: false },
+      { title: "ふたりはステディ", duration: "3:29", titleTrack: false },
+      { title: "シェットランドに頬をうずめて", duration: "3:46", titleTrack: false }
+    ]
   },
   {
-    cover: require("@/assets/albumcovers/Piper-SummerBreeze.jpg")
+    artist: "Piper",
+    title: "Summer Breeze",
+    cover: require("@/assets/albumcovers/Piper-SummerBreeze.jpg"),
+    tracks: [
+      { title: "Shine On", duration: "5:37", titleTrack: false },
+      { title: "Summer Breeze", duration: "3:21", titleTrack: false },
+      { title: "Hot Sand", duration: "3:26", titleTrack: false },
+      { title: "Gentle Shower", duration: "3:34", titleTrack: false },
+      { title: "Twilight", duration: "3:39", titleTrack: false },
+      { title: "Samba Night", duration: "4:22", titleTrack: false },
+      { title: "Starlight Love", duration: "3:06", titleTrack: false },
+      { title: "Night Shore", duration: "3:37", titleTrack: false },
+      { title: "Angel Smile", duration: "4:55", titleTrack: false },
+      { title: "Moonlight Beach", duration: "4:56", titleTrack: false }
+    ]
   },
   {
     cover: require("@/assets/albumcovers/Rideontime_tatsyamashita.jpg")

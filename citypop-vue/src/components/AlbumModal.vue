@@ -194,13 +194,8 @@ export default Vue.extend({
       }
       &__tracks {
         .scroll-area {
-          // margin: auto;
-          // width: 300px;
           overflow-x: hidden;
           height: 100%;
-          @media #{map-get($display-breakpoints, 'xs-only')} {
-            // width: 250px;
-          }
         }
         .ps .ps__rail-y:hover,
         .ps .ps__rail-y:focus,
@@ -224,7 +219,6 @@ export default Vue.extend({
 
         &__details {
           min-width: 330px;
-          // padding-right: 2em;
           display: flex;
           justify-content: space-between;
           @media #{map-get($display-breakpoints, 'xs-only')} {

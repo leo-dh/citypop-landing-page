@@ -18,4 +18,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### TODO
 
 - Add imagemin-webpack-plugin
-- xl breakpoint
+- Add translate animation for AlbumCollection Component and Modal
