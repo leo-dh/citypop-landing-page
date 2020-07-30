@@ -1,15 +1,18 @@
-import express, { Request, Response } from "express";
-import cors from "cors";
+import app from "./app";
+import http from "http";
+import mongoose from "mongoose";
 
+const MONGO_URI = "mongodb://localhost:27017/citypop";
 const PORT = process.env.PORT || 3000;
-const app = express();
-app.use(cors());
-
-app.get("/api", (req: Request, res: Response) => {
-  console.log("Received");
-  res.send("From API");
-});
-
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+const server = http.createServer(app);
+server.listen(PORT);
+server.on("listening", () => {
+  console.info(`Listening on port ${PORT}`);
+  mongoose.connect(MONGO_URI);
+  mongoose.connection.on("open", () => {
+    console.info("Connected to MongoDB");
+  });
+  mongoose.connection.on("error", (err: Error) => {
+    console.error(err);
+  });
 });
