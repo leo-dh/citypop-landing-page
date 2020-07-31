@@ -1,25 +1,41 @@
-import mongoose from "mongoose";
-const baseUrl = "http://localhost:3000/api/";
+import mongoose, { Document } from "mongoose";
+const baseUrl = "http://localhost/api/";
 
-const albumSchema = new mongoose.Schema({
-  title: String,
-  artist: String,
-  cover: {
-    type: String,
-    get: (url) => {
-      return `${baseUrl}${url}`;
-    }
+interface Track {
+  title: string;
+  duration: string;
+  titleTrack: boolean;
+}
+interface AlbumSchema extends Document {
+  title: string;
+  artist: string;
+  cover: string;
+  tracks: Track[];
+  comments?: { spotifyLink: string };
+}
+
+const albumSchema = new mongoose.Schema(
+  {
+    title: String,
+    artist: String,
+    cover: {
+      type: String,
+      get: (filename: string): string => {
+        return `${baseUrl}${filename}`;
+      }
+    },
+    tracks: [
+      {
+        title: String,
+        duration: String,
+        titleTrack: Boolean
+      }
+    ],
+    comments: { spotifyLink: String }
   },
-  tracks: [
-    {
-      title: String,
-      duration: String,
-      titleTrack: Boolean
-    }
-  ],
-  comments: { spotifyLink: String }
-});
+  { toObject: { getters: true }, toJSON: { getters: true } }
+);
 
-const album = mongoose.model("album", albumSchema);
+const albumModel = mongoose.model<AlbumSchema>("album", albumSchema);
 
-export { album };
+export default albumModel;
