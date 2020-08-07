@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 const MONGO_URI = "mongodb://localhost:27017/citypop";
 const MONGO_OPTIONS = { useNewUrlParser: true, useUnifiedTopology: true };
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const server = http.createServer(app);
 
 server.listen(PORT);
