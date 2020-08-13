@@ -168,7 +168,7 @@ export const albums: Album[] = [
   {
     artist: "Mariya Takeuchi",
     title: "Variety",
-    cover: require("@/assets/albumcovers/VarietyMariyaTakeuchi"),
+    cover: require("@/assets/albumcovers/VarietyMariyaTakeuchi.png"),
     tracks: [
       { title: "もう一度", duration: "4:06", titleTrack: true },
       { title: "プラスティック・ラブ", duration: "4:51", titleTrack: false },
@@ -201,6 +201,8 @@ export const albums: Album[] = [
     ]
   },
   {
+    artist: "Tatsuro Yamashita",
+    title: "Ride On Time",
     cover: require("@/assets/albumcovers/Rideontime_tatsyamashita.jpg")
   },
   {

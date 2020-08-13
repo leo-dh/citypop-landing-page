@@ -12,7 +12,6 @@
 
 <script lang="ts">
 import AlbumGrid from "@/components/AlbumGrid.vue";
-import AlbumModal from "@/components/AlbumModal.vue";
 import { albums } from "@/store/data";
 import mixins from "vue-typed-mixins";
 import FadeInMixin from "@/mixins/FadeInMixin";
@@ -20,7 +19,7 @@ export default mixins(FadeInMixin).extend({
   name: "AlbumCollection",
   components: {
     AlbumGrid,
-    AlbumModal
+    AlbumModal: () => import(/* webpackChunkName: "modal" */ "@/components/AlbumModal.vue")
   },
   data() {
     return {
