@@ -203,16 +203,40 @@ export const albums: Album[] = [
   {
     artist: "Tatsuro Yamashita",
     title: "Ride On Time",
-    cover: require("@/assets/albumcovers/Rideontime_tatsyamashita.jpg")
+    cover: require("@/assets/albumcovers/Rideontime_tatsyamashita.jpg"),
+    tracks: [
+      { title: "Someday (いつか)", duration: "5:49", titleTrack: false },
+      { title: "Daydream", duration: "4:31", titleTrack: false },
+      { title: "Silent Screamer", duration: "5:29", titleTrack: false },
+      { title: "Ride on Time", duration: "5:55", titleTrack: false },
+      {
+        title: "The Door into Summer (夏への扉, Natsu e no Tobira)",
+        duration: "4:41",
+        titleTrack: false
+      },
+      { title: "My Sugar Babe", duration: "4:11", titleTrack: false },
+      { title: "Rainy Day", duration: "5:20", titleTrack: false },
+      { title: "Clouds (雲のゆくえに, Kumo no Yukue ni)", duration: "5:40", titleTrack: false },
+      { title: "Kissing Goodnight (おやすみ, Oyasumi)", duration: "1:41", titleTrack: false }
+    ]
   },
   {
-    cover: require("@/assets/albumcovers/The-Solutions-Mood-For-Love.jpg")
+    artist: "The Solutions",
+    title: "Mood For Love",
+    cover: require("@/assets/albumcovers/The-Solutions-Mood-For-Love.jpg"),
+    tracks: [{ title: "Mood For Love", duration: "3:24", titleTrack: true }]
   },
   {
-    cover: require("@/assets/albumcovers/Yubin_solo_debut_album_cover.jpg")
+    artist: "Yubin",
+    title: "都市女子 (City Woman)",
+    cover: require("@/assets/albumcovers/Yubin_solo_debut_album_cover.jpg"),
+    tracks: [{ title: "Lady (숙녀 (淑女))", duration: "3:16", titleTrack: true }]
   },
   {
-    cover: require("@/assets/albumcovers/Yukika_Cherries_Jubiles_album_cover.jpg")
+    artist: "Yukika",
+    title: "Cherries Jubiles",
+    cover: require("@/assets/albumcovers/Yukika_Cherries_Jubiles_album_cover.jpg"),
+    tracks: [{ title: "Cherries Jubiles", duration: "4:05", titleTrack: true }]
   },
   {
     cover: require("@/assets/albumcovers/givemethelight-uju.jpg")
