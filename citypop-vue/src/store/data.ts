@@ -239,15 +239,57 @@ export const albums: Album[] = [
     tracks: [{ title: "Cherries Jubiles", duration: "4:05", titleTrack: true }]
   },
   {
-    cover: require("@/assets/albumcovers/givemethelight-uju.jpg")
+    artist: "uju",
+    title: "Sunday Seoul Ep.1",
+    cover: require("@/assets/albumcovers/givemethelight-uju.jpg"),
+    tracks: [
+      { title: "#Outfit", duration: "3:26", titleTrack: false },
+      { title: "Flash", duration: "3:20", titleTrack: false },
+      { title: "Give Me The Light 불을 밝혀줘", duration: "3:10 	", titleTrack: true },
+      { title: "Night Flying 야간비행", duration: "3:52", titleTrack: false },
+      { title: "Greeting 인사", duration: "3:44", titleTrack: false }
+    ],
+    comments: { spotifyLink: "https://open.spotify.com/album/3pyxq9x3nrxr2EdHwu6Lof" }
   },
   {
-    cover: require("@/assets/albumcovers/muzie-new-wave-city.jpg")
+    artist: "MUZIE",
+    title: "New Wave City",
+    cover: require("@/assets/albumcovers/muzie-new-wave-city.jpg"),
+    tracks: [
+      { title: "Next Door (feat. Killagramz)", duration: "3:44", titleTrack: false },
+      {
+        title: "Sindorim (feat. XQ, Bbanana, J Black & J Pink)",
+        duration: "3:29",
+        titleTrack: false
+      },
+      { title: "Don’t Worry (feat. Jeebanoff)", duration: "3:06", titleTrack: false },
+      {
+        title: "What Is Say? (feat. HANHAE & HWANG SEUNG UN)",
+        duration: "3:23",
+        titleTrack: false
+      },
+      { title: "I Can't Let You Go (feat. Space Cowboy)", duration: "3:27", titleTrack: true },
+      { title: "Sindorim (Night Tempo Wave City Remix)", duration: "3:30", titleTrack: false }
+    ],
+    comments: { spotifyLink: "https://open.spotify.com/album/7axvOyqRDBKkk2sc3CPRMV" }
   },
   {
-    cover: require("@/assets/albumcovers/neon-yukika.jpg")
+    artist: "Yukika",
+    title: "NEON",
+    cover: require("@/assets/albumcovers/neon-yukika.jpg"),
+    tracks: [{ title: "NEON", duration: "3:40", titleTrack: true }],
+    comments: { spotifyLink: "https://open.spotify.com/album/2tF9C0qTzRdaZShK4iK0UD" }
   },
   {
-    cover: require("@/assets/albumcovers/nightinseoul-uju.jpg")
+    artist: "uju",
+    title: "Sunday Seoul Ep.2",
+    cover: require("@/assets/albumcovers/nightinseoul-uju.jpg"),
+    tracks: [
+      { title: "Any Call (Call Me Any Time)", duration: "3:28", titleTrack: false },
+      { title: "Reaching Out To You", duration: "3:31", titleTrack: false },
+      { title: "Night in Seoul", duration: "3:54", titleTrack: true },
+      { title: "Moon, Crystal, Love", duration: "3:53", titleTrack: false },
+      { title: "Trapped in the Picture", duration: "3:28", titleTrack: false }
+    ]
   }
 ];

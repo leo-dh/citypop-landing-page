@@ -226,6 +226,8 @@ export default Vue.extend({
           }
           &__title {
             display: flex;
+            max-width: 30ch;
+            margin-right: 12px;
           }
         }
       }
