@@ -25,7 +25,7 @@ export const writeUp3: WriteUp = {
     "<b> Experience it for yourself to find out more! </b>"
 };
 
-export const videoId = "_cOFCiiQIvI";
+export const videoId = "3bNITQR4Uso";
 
 export const imageCard1: ImageCard = {
   imagePath: "imageCard/PacificBreezeAlbumArtByHiroshiNagai.jpg",

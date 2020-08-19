@@ -165,7 +165,6 @@ export default Vue.extend({
       flex-direction: column;
       padding: 48px 80px 0px;
       flex: 1 1 0%;
-      justify-content: center;
     }
     &__text {
       height: 300px;
@@ -180,8 +179,10 @@ export default Vue.extend({
         &__title {
           font-size: 3em;
           line-height: 1.25em;
+          margin-bottom: 4px;
           @media #{map-get($display-breakpoints, 'sm-and-down')} {
             font-size: 2.5em;
+            margin-bottom: 8px;
           }
         }
         &__artist {
