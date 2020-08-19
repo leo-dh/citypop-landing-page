@@ -1,9 +1,5 @@
 # City Pop
 
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 ### Assets References
 
 - Skyline SVG
@@ -18,5 +14,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO
 
-- Add imagemin-webpack-plugin
 - Add translate animation for AlbumCollection Component and Modal

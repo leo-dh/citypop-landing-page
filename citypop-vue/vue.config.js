@@ -1,3 +1,5 @@
+const ImageminPlugin = require("imagemin-webpack-plugin").default;
+
 module.exports = {
   transpileDependencies: ["vuetify"],
   css: {
@@ -12,7 +14,12 @@ module.exports = {
       headers: {
         "Access-Control-Allow-Origin": "*"
       }
-      // https: true
-    }
-  }
+    },
+    plugins: [
+      new ImageminPlugin({
+        disable: process.env.NODE_ENV !== "production"
+      })
+    ]
+  },
+  publicPath: process.env.NODE_ENV === "production" ? "/citypop/" : "/"
 };
