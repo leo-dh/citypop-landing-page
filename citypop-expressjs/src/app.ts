@@ -11,7 +11,6 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(bodyparser.json());
-app.use(express.static("public"));
 app.use(requestLogger);
 app.use("/api", apiRoutes);
 app.use(errorHandler);

@@ -1,10 +1,10 @@
 import app from "./app";
 import mongoose from "mongoose";
-import { PORT, HOSTNAME, MONGODB_ATLAS_URI } from "./utils/config";
+import { PORT, MONGODB_ATLAS_URI } from "./utils/config";
 
 const MONGO_OPTIONS = { useNewUrlParser: true, useUnifiedTopology: true };
 
-const server = app.listen(PORT, HOSTNAME);
+const server = app.listen(PORT);
 server.on("listening", () => {
   console.info(`Listening on port ${PORT}`);
   mongoose.connect(MONGODB_ATLAS_URI, MONGO_OPTIONS);

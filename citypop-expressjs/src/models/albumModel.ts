@@ -1,5 +1,5 @@
 import mongoose, { Document, model } from "mongoose";
-import { DOMAIN_NAME } from "utils/config";
+import { DOMAIN_NAME } from "../utils/config";
 const baseUrl = `${DOMAIN_NAME}/images/albumcovers/`;
 
 interface Track {
