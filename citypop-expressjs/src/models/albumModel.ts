@@ -1,12 +1,12 @@
-import mongoose, { Document } from "mongoose";
-const baseUrl = "http://localhost/api/";
+import mongoose, { Document, model } from "mongoose";
+const baseUrl = "http://localhost:5500/images/albumcovers/";
 
 interface Track {
   title: string;
   duration: string;
   titleTrack: boolean;
 }
-interface AlbumSchema extends Document {
+export interface AlbumSchema extends Document {
   title: string;
   artist: string;
   cover: string;
@@ -36,6 +36,6 @@ const albumSchema = new mongoose.Schema(
   { toObject: { getters: true }, toJSON: { getters: true } }
 );
 
-const albumModel = mongoose.model<AlbumSchema>("album", albumSchema);
+const albumModel = model<AlbumSchema>("album", albumSchema);
 
 export default albumModel;
