@@ -1,5 +1,6 @@
 import mongoose, { Document, model } from "mongoose";
-const baseUrl = "http://localhost:5500/images/albumcovers/";
+import { DOMAIN_NAME } from "utils/config";
+const baseUrl = `${DOMAIN_NAME}/images/albumcovers/`;
 
 interface Track {
   title: string;

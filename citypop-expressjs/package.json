@@ -17,7 +17,8 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.1.0",
-    "mongoose": "^5.9.26"
+    "mongoose": "^5.9.26",
+    "typescript": "^3.9.7"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.0",
@@ -32,7 +33,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.7"
+    "ts-node": "^8.10.2"
   }
 }
