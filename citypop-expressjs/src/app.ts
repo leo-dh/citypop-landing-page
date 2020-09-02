@@ -15,8 +15,8 @@ app.use(cors());
 app.use(bodyparser.json());
 app.use(requestLogger);
 app.use("/api", apiRoutes);
-app.use(frontendRoutes);
 app.use(express.static("frontend-dist"));
+app.use(frontendRoutes);
 app.use(errorHandler);
 
 export default app;
