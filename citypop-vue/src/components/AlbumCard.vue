@@ -4,7 +4,7 @@
       v-lazy="album.cover"
       :class="{ 'on-hover': hover }"
       class="albumImage"
-      @click="doSomething"
+      @click="openModal"
     />
   </v-hover>
 </template>
@@ -24,7 +24,7 @@ export default Vue.extend({
     return {};
   },
   methods: {
-    doSomething(): void {
+    openModal(): void {
       this.$store.state.albumModal = true;
       this.$store.state.selectedAlbum = this.album;
     }

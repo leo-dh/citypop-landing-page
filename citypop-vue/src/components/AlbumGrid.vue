@@ -15,14 +15,10 @@ export default Vue.extend({
   components: {
     AlbumCard
   },
-  props: {
-    albums: {
-      type: Array as () => Array<Album>,
-      required: true
+  computed: {
+    albums(): Album[] {
+      return this.$store.getters.albums;
     }
-  },
-  data() {
-    return {};
   }
 });
 </script>

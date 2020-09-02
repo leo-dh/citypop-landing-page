@@ -14,6 +14,7 @@
 import Vue from "vue";
 import AppNavBar from "@/components/AppNavBar.vue";
 import AppNavDrawer from "@/components/AppNavDrawer.vue";
+import axios from "axios";
 
 export default Vue.extend({
   name: "App",
@@ -30,6 +31,11 @@ export default Vue.extend({
         }
       }
     }
+  },
+  created() {
+    axios.get("https://leodh.dev/citypop/api/albums?limit=18").then(result => {
+      this.$store.state.albums = result.data;
+    });
   }
 });
 </script>
