@@ -2,7 +2,7 @@
   <div>
     <div class="center">
       <h1 style="font-size: 3em; text-align: center;">
-        Coming Soon
+        Oops Page Not Found
       </h1>
     </div>
   </div>
@@ -10,8 +10,12 @@
 
 <script lang="ts">
 import Vue from "vue";
+
 export default Vue.extend({
-  name: "Resources"
+  name: "NotFound",
+  data() {
+    return {};
+  }
 });
 </script>
 

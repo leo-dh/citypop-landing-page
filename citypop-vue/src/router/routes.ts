@@ -1,6 +1,6 @@
 import { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
-const routes: Array<RouteConfig> = [
+export const baseRoutes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
@@ -18,5 +18,10 @@ const routes: Array<RouteConfig> = [
     }
   }
 ];
-
-export default routes;
+export const routes: Array<RouteConfig> = [
+  ...baseRoutes,
+  {
+    path: "*",
+    component: () => import(/* webpackChunkName: "404" */ "../views/NotFound.vue")
+  }
+];

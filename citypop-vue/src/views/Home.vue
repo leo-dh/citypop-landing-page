@@ -22,8 +22,4 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" scoped>
-.placeholder {
-  height: 100vh;
-}
-</style>
+<style lang="scss" scoped></style>

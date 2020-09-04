@@ -22,13 +22,13 @@
 
 <script lang="ts">
 import Vue from "vue";
-import routes from "@/router/routes";
+import { baseRoutes } from "@/router/routes";
 
 export default Vue.extend({
   name: "AppNavDrawer",
   data() {
     return {
-      routes: routes
+      routes: baseRoutes
     };
   }
 });
