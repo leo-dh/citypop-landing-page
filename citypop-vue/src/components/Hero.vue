@@ -43,6 +43,9 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+.wrapper {
+  overflow: hidden;
+}
 .hero {
   height: 90vh;
   display: flex;
