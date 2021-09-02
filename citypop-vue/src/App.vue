@@ -33,7 +33,7 @@ export default Vue.extend({
     }
   },
   created() {
-    axios.get("https://leodh.dev/citypop/api/albums?limit=18").then(result => {
+    axios.get(`${process.env.VUE_APP_API}/albums?limit=18`).then(result => {
       this.$store.state.albums = result.data;
     });
   }
