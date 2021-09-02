@@ -121,7 +121,7 @@ export default Vue.extend({
     async adjustContainerHeight(): Promise<void> {
       await this.$nextTick();
       const el = document.getElementsByClassName("albumModal__content__text__details")[0];
-      this.setContainerHeight(el.clientHeight);
+      if (el) this.setContainerHeight(el.clientHeight);
     },
     setContainerHeight(detailsHeight = 70): void {
       let calcHeight = 180;
