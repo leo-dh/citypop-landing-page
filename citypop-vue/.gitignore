@@ -22,4 +22,3 @@ pnpm-debug.log*
 *.sw?
 
 deploy.sh
-src/store/data.ts
